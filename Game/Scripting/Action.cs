@@ -1,7 +1,7 @@
-using Unit06.Game.Casting;
+using UNIT06_GAME.Casting;
 
 
-namespace Unit06.Game.Scripting 
+namespace UNIT06_GAME.Scripting 
 {
     /// <summary>
     /// A thing that is done in the game.

@@ -1,8 +1,8 @@
-using Unit06.Game.Casting;
-using Unit06.Game.Services;
+using UNIT06_GAME.Casting;
+using UNIT06_GAME.Services;
 
 
-namespace Unit06.Game.Scripting
+namespace UNIT06_GAME.Scripting
 {
     public class DrawRacketAction : Action
     {
