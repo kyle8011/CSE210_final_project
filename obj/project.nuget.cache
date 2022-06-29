@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "OsLeYHjgl+TTpNE4iBmJgAqVFAshdqpiZW6NZnKy3LVkg9dTTQmPzVjA4W7UTcQr5goL6wv48rx8VYc1TF8AnA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210\\Prove_Assignments\\unit06-game\\unit06-game.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kyle8\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
+    "C:\\Users\\kyle8\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
