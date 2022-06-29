@@ -1,4 +1,4 @@
-namespace Unit06.Game.Services
+namespace UNIT06_GAME.Services
 {
     public interface KeyboardService
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace Unit06.Game.Casting
+namespace UNIT06_GAME.Casting
 {
     /// <summary>
     /// A collection of actors.

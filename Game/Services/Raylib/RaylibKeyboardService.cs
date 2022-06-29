@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Raylib_cs;
 
 
-namespace Unit06.Game.Services
+namespace UNIT06_GAME.Services
 {
     public class RaylibKeyboardService : KeyboardService
     {

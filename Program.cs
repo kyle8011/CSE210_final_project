@@ -1,6 +1,6 @@
 ﻿using System;
-using Unit06.Game.Directing;
-using Unit06.Game.Services;
+using UNIT06_GAME.Directing;
+using UNIT06_GAME.Services;
 
 namespace Unit06
 {

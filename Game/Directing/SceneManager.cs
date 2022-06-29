@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Unit06.Game.Casting;
-using Unit06.Game.Scripting;
-using Unit06.Game.Services;
+using UNIT06_GAME.Casting;
+using UNIT06_GAME.Scripting;
+using UNIT06_GAME.Services;
 
 
-namespace Unit06.Game.Directing
+namespace UNIT06_GAME.Directing
 {
     public class SceneManager
     {

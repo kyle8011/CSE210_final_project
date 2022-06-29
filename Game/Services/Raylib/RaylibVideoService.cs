@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using Raylib_cs;
 
 
-namespace Unit06.Game.Services
+namespace UNIT06_GAME.Services
 {
     public class RaylibVideoService : VideoService
     {
