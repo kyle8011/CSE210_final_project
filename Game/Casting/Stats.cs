@@ -1,4 +1,4 @@
-namespace UNIT06_GAME.Casting
+namespace unit06_game.Casting
 {
     /// <summary>
     /// A thing that participates in the game.
@@ -12,8 +12,7 @@ namespace UNIT06_GAME.Casting
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Stats(int level = 1, int lives = 3, int score = 0, 
-                bool debug = false) : base(debug)
+        public Stats(int level = 1, int lives = 3, int score = 0)
         {
             this.level = level;
             this.lives = lives;

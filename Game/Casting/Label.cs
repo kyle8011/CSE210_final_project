@@ -1,4 +1,4 @@
-namespace UNIT06_GAME.Casting
+namespace unit06_game.Casting
 {
     /// <summary>
     /// A label to be displayed.
@@ -11,7 +11,7 @@ namespace UNIT06_GAME.Casting
         /// <summary>
         /// Constructs a new instance of Label.
         /// </summary>
-        public Label(Text text, Point position) : base(false)
+        public Label(Text text, Point position)
         {
             this.text = text;
             this.position = position;
@@ -21,18 +21,18 @@ namespace UNIT06_GAME.Casting
         /// Gets the label's text.
         /// </summary>
         /// <returns>The text.</returns>
-        public Text GetText()
-        {
-            return text;
-        }
+      // public Text GetText()
+      // {
+      //     return text;
+      // }
 
         /// <summary>
         /// Gets the label's position.
         /// </summary>
         /// <returns>The position.</returns>
-        public Point GetPosition()
-        {
-            return position;
-        }
+        //public Point GetPosition()
+        //{
+        //    return position;
+        //}
     }
 }

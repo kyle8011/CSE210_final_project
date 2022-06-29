@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace UNIT06_GAME.Casting
+namespace unit06_game.Casting
 {
     /// <summary>
     /// An animation.

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace UNIT06_GAME.Scripting
+namespace unit06_game.Scripting
 {
     /// <summary>
     /// A collection of actions.

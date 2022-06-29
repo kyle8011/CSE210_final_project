@@ -1,8 +1,8 @@
 ﻿using System;
-using UNIT06_GAME.Directing;
-using UNIT06_GAME.Services;
+using unit06_game.Directing;
+using unit06_game.Services;
 
-namespace Unit06
+namespace Unit06_game
 {
     public class Program
     {

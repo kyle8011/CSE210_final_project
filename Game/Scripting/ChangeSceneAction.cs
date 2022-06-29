@@ -1,8 +1,8 @@
-using UNIT06_GAME.Casting;
-using UNIT06_GAME.Services;
+using unit06_game.Casting;
+using unit06_game.Services;
 
 
-namespace UNIT06_GAME.Scripting
+namespace unit06_game.Scripting
 {
     public class ChangeSceneAction : Action
     {
@@ -15,7 +15,7 @@ namespace UNIT06_GAME.Scripting
             this.nextScene = nextScene;
         }
 
-        public void Execute(Cast cast, Script script, ActionCallback callback)
+        public void Execute(Cast cast, Script script)
         {
             if (keyboardService.IsKeyPressed(Constants.ENTER))
             {

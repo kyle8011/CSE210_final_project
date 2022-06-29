@@ -1,7 +1,4 @@
-using Unit06.Game.Casting;
-
-
-namespace Unit06.Game.Scripting 
+namespace unit06_game.Game.Scripting 
 {
     /// <summary>
     /// A callback that can be used to trigger scene changes.

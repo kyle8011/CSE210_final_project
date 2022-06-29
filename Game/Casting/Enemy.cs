@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace UNIT06_GAME.Casting
+namespace unit06_game.Casting
 {
     /// <summary>
     /// 
@@ -26,7 +26,7 @@ namespace UNIT06_GAME.Casting
         /// <summary>
         /// Bounces the ball horizontally.
         /// </summary>
-        public void BounceX()
+        public override void MoveNext()
         {
             Point velocity = body.GetVelocity();
             double rn = (random.NextDouble() * (1.2 - 0.8) + 0.8);

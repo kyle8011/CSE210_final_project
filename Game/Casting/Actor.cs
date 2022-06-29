@@ -1,4 +1,6 @@
-namespace UNIT06_GAME.Casting
+using System;
+
+namespace unit06_game.Casting
 {
     /// <summary>
     /// A thing that participates in the game.
@@ -70,8 +72,8 @@ namespace UNIT06_GAME.Casting
         /// </summary>
         public virtual void MoveNext()
         {
-            int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
-            int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
+            int x = ((position.GetX() + velocity.GetX()) + Constants.SCREEN_WIDTH) % Constants.SCREEN_WIDTH;
+            int y = ((position.GetY() + velocity.GetY()) + Constants.SCREEN_HEIGHT) % Constants.SCREEN_HEIGHT;
             position = new Point(x, y);
         }
 

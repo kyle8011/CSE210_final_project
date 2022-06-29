@@ -1,4 +1,4 @@
-namespace UNIT06_GAME.Casting
+namespace unit06_game.Casting
 {
     /// <summary>
     /// <para>A distance from a relative origin (0, 0).</para>

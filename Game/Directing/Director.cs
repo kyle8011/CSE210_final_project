@@ -1,15 +1,15 @@
 using System.Collections.Generic;
-using UNIT06_GAME.Casting;
-using UNIT06_GAME.Scripting;
-using UNIT06_GAME.Services;
+using unit06_game.Casting;
+using unit06_game.Scripting;
+using unit06_game.Services;
 
 
-namespace UNIT06_GAME.Directing
+namespace unit06_game.Directing
 {
     /// <summary>
     /// A person who directs the game.
     /// </summary>
-    public class Director : ActionCallback
+    public class Director
     {
         private Cast cast;
         private Script script;
@@ -57,7 +57,7 @@ namespace UNIT06_GAME.Directing
             List<Action> actions = script.GetActions(group);
             foreach(Action action in actions)
             {
-                action.Execute(cast, script, this);
+                action.Execute(cast, script);
             }
         }
     }

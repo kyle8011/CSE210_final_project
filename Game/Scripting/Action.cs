@@ -1,7 +1,7 @@
-using UNIT06_GAME.Casting;
+using unit06_game.Casting;
 
 
-namespace UNIT06_GAME.Scripting 
+namespace unit06_game.Scripting 
 {
     /// <summary>
     /// A thing that is done in the game.
@@ -14,6 +14,6 @@ namespace UNIT06_GAME.Scripting
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
         /// <param name="script">The script of actions.</param>
-        void Execute(Cast cast, Script script);
+        void Execute(Cast cast, Script script, ActionCallback );
     }
 }

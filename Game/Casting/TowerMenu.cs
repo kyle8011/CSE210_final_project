@@ -1,4 +1,4 @@
-namespace UNIT06_GAME.Casting
+namespace unit06_game.Casting
 {
     /// <summary>
     /// A thing that participates in the game.
@@ -12,7 +12,7 @@ namespace UNIT06_GAME.Casting
         /// <summary>
         /// Constructs a new instance of Actor.
         /// </summary>
-        public Brick(Body body, Animation animation, int points, bool debug) : base(debug)
+        public Brick(Body body, Animation animation, int points)
         {
             this.body = body;
             this.animation = animation;

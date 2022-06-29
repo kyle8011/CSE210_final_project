@@ -1,9 +1,9 @@
 using System.Numerics;
 using Raylib_cs;
-using UNIT06_GAME.Casting;
+using unit06_game.Casting;
 
 
-namespace UNIT06_GAME.Services
+namespace unit06_game.Services
 {
     public class RaylibPhysicsService : PhysicsService
     {

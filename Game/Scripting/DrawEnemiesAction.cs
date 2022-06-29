@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using UNIT06_GAME.Casting;
-using UNIT06_GAME.Services;
+using unit06_game.Casting;
+using unit06_game.Services;
 
 
-namespace UNIT06_GAME.Scripting
+namespace unit06_game.Scripting
 {
     public class DrawBricksAction : Action
     {

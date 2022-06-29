@@ -1,4 +1,4 @@
-namespace UNIT06_GAME.Casting
+namespace unit06_game.Casting
 {
     /// <summary>
     /// A thing that participates in the game.
@@ -26,15 +26,6 @@ namespace UNIT06_GAME.Casting
         public Point GetPosition()
         {
             return position;
-        }
-
-        /// <summary>
-        /// Gets a rectangle enclosing this body.
-        /// </summary>
-        /// <returns>The enclosing rectangle.</returns>
-        public Rectangle GetRectangle()
-        {
-            return new Rectangle(position, size);
         }
 
         /// <summary>
