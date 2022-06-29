@@ -14,6 +14,6 @@ namespace UNIT06_GAME.Scripting
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
         /// <param name="script">The script of actions.</param>
-        void Execute(Cast cast, Script script, ActionCallback callback);
+        void Execute(Cast cast, Script script);
     }
 }

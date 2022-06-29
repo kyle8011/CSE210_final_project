@@ -4,16 +4,16 @@ using UNIT06_GAME.Services;
 
 namespace UNIT06_GAME.Scripting
 {
-    public class DrawBallAction : Action
+    public class DrawSceneAction : Action
     {
         private VideoService videoService;
         
-        public DrawBallAction(VideoService videoService)
+        public DrawSceneAction(VideoService videoService)
         {
             this.videoService = videoService;
         }
 
-        public void Execute(Cast cast, Script script, ActionCallback callback)
+        public void Execute(Cast cast, Script script)
         {
             Ball ball = (Ball)cast.GetFirstActor(Constants.BALL_GROUP);
             Body body = ball.GetBody();
