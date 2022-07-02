@@ -27,19 +27,12 @@ namespace unit06_game.Directing
             this.script = new Script();
             this.sceneManager = new SceneManager();
         }
-
-        /// </inheritdoc>
-        public void OnNext(string scene)
-        {
-            sceneManager.PrepareScene(scene, cast, script);
-        }
         
         /// <summary>
         /// Starts the game by running the main game loop for the given cast and script.
         /// </summary>
         public void StartGame()
         {
-            OnNext(Constants.NEW_GAME);
             ExecuteActions(Constants.INITIALIZE);
             ExecuteActions(Constants.LOAD);
             while (videoService.IsWindowOpen())

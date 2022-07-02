@@ -1,4 +1,6 @@
 using unit06_game.Casting;
+using unit06_game.Scripting;
+
 
 
 namespace unit06_game.Scripting 
@@ -14,6 +16,6 @@ namespace unit06_game.Scripting
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
         /// <param name="script">The script of actions.</param>
-        void Execute(Cast cast, Script script, ActionCallback );
+        void Execute(Cast cast, Script script);
     }
 }

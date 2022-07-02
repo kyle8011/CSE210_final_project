@@ -13,7 +13,7 @@ namespace unit06_game.Scripting
             this.videoService = videoService;
         }
 
-        public void Execute(Cast cast, Script script, ActionCallback callback)
+        public void Execute(Cast cast, Script script)
         {
             videoService.ClearBuffer();
         }

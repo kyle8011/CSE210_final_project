@@ -1,20 +1,19 @@
 using unit06_game.Casting;
 namespace unit06_game.Scripting
 {
-    public class MoveBallAction : Action
+    public class MoveEnemyAction : Action
     {
-        public MoveBallAction()
+        public MoveEnemyAction()
         {
         }
 
-        public void Execute(Cast cast, Script script, ActionCallback callback)
+        public void Execute(Cast cast, Script script)
         {
-            Ball ball = (Ball)cast.GetFirstActor(Constants.BALL_GROUP);
-            Body body = ball.GetBody();
-            Point position = body.GetPosition();
-            Point velocity = body.GetVelocity();
+            Enemy enemy = (Enemy)cast.GetFirstActor(Constants.ENEMY_GROUP);
+            Point position = enemy.GetPosition();
+            Point velocity = enemy.GetVelocity();
             position = position.Add(velocity);
-            body.SetPosition(position);
+            enemy.SetPosition(position);
         }
     }
 }

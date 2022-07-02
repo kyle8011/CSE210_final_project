@@ -96,7 +96,7 @@ namespace unit06_game
         public static string SCORE_FORMAT = "SCORE: {0}";
 
         // BALL
-        public static string BALL_GROUP = "balls";
+        public static string ENEMY_GROUP = "balls";
         public static string BALL_IMAGE = "Assets/Images/000.png";
         public static int BALL_WIDTH = 28;
         public static int BALL_HEIGHT = 28;

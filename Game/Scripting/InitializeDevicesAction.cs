@@ -6,18 +6,16 @@ namespace unit06_game.Scripting
 {
     public class InitializeDevicesAction : Action
     {
-        private AudioService audioService;
+       
         private VideoService videoService;
         
-        public InitializeDevicesAction(AudioService audioService, VideoService videoService)
+        public InitializeDevicesAction(VideoService videoService)
         {
-            this.audioService = audioService;
             this.videoService = videoService;
         }
 
-        public void Execute(Cast cast, Script script, ActionCallback callback)
+        public void Execute(Cast cast, Script script)
         {
-            audioService.Initialize();
             videoService.Initialize();
         }
     }

@@ -6,18 +6,16 @@ namespace unit06_game.Scripting
 {
     public class LoadAssetsAction : Action
     {
-        private AudioService audioService;
+        
         private VideoService videoService;
         
-        public LoadAssetsAction(AudioService audioService, VideoService videoService)
+        public LoadAssetsAction( VideoService videoService)
         {
-            this.audioService = audioService;
             this.videoService = videoService;
         }
 
-        public void Execute(Cast cast, Script script, ActionCallback callback)
+        public void Execute(Cast cast, Script script)
         {
-            audioService.LoadSounds("Assets/Sounds");
             videoService.LoadFonts("Assets/Fonts");
             videoService.LoadImages("Assets/Images");
         }
