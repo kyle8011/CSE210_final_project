@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 
 
-namespace unit06_game.Casting
+namespace unit05_cycle_Team.Game.Casting
 {
     /// <summary>
-    /// A collection of actors.
+    /// <para>A collection of actors.</para>
+    /// <para>
+    /// The responsibility of a cast is to keep track of a collection of actors. It has methods for 
+    /// adding, removing and getting them by a group name.
+    /// </para>
     /// </summary>
     public class Cast
     {
@@ -32,29 +36,6 @@ namespace unit06_game.Casting
             if (!actors[group].Contains(actor))
             {
                 actors[group].Add(actor);
-            }
-        }
-
-        /// <summary>
-        /// Clears the actors in the given group.
-        /// </summary>
-        /// <param name="group">The given group.</param>
-        public void ClearActors(string group)
-        {
-            if (actors.ContainsKey(group))
-            {
-                actors[group] = new List<Actor>();
-            }
-        }
-
-        /// <summary>
-        /// Clears all the actors in the cast.
-        /// </summary>
-        public void ClearAllActors()
-        {
-            foreach(string group in actors.Keys)
-            {
-                actors[group] = new List<Actor>();
             }
         }
 
@@ -100,6 +81,23 @@ namespace unit06_game.Casting
                 if (actors[group].Count > 0)
                 {
                     result = actors[group][0];
+                }
+            }
+            return result;
+        }
+        /// <summary>
+        /// Gets the first actor in the given group.
+        /// </summary>
+        /// <param name="group">The group name.</param>
+        /// <returns>The first actor.</returns>
+        public Actor GetSecondActor(string group)
+        {
+            Actor result = null;
+            if (actors.ContainsKey(group))
+            {
+                if (actors[group].Count > 0)
+                {
+                    result = actors[group][1];
                 }
             }
             return result;

@@ -1,12 +1,14 @@
-using unit06_game.Casting;
-using unit06_game.Scripting;
+using unit05_cycle_Team.Game.Casting;
 
 
-
-namespace unit06_game.Scripting 
+namespace unit05_cycle_Team.Game.Scripting 
 {
     /// <summary>
-    /// A thing that is done in the game.
+    /// <para>A thing that is done.</para>
+    /// <para>
+    /// The responsibility of action is to do something that is integral or important in the game. 
+    /// Thus, it has one method, Execute(...), which should be overridden by derived classes.
+    /// </para>
     /// </summary>
     public interface Action
     {

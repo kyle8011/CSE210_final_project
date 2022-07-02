@@ -1,9 +1,14 @@
 using System;
 
-namespace unit06_game.Casting
+
+namespace unit05_cycle_Team.Game.Casting
 {
     /// <summary>
-    /// A thing that participates in the game.
+    /// <para>A thing that participates in the game.</para>
+    /// <para>
+    /// The responsibility of Actor is to keep track of its appearance, position and velocity in 2d 
+    /// space.
+    /// </para>
     /// </summary>
     public class Actor
     {
@@ -72,8 +77,8 @@ namespace unit06_game.Casting
         /// </summary>
         public virtual void MoveNext()
         {
-            int x = ((position.GetX() + velocity.GetX()) + Constants.SCREEN_WIDTH) % Constants.SCREEN_WIDTH;
-            int y = ((position.GetY() + velocity.GetY()) + Constants.SCREEN_HEIGHT) % Constants.SCREEN_HEIGHT;
+            int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
+            int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
             position = new Point(x, y);
         }
 
@@ -148,5 +153,6 @@ namespace unit06_game.Casting
             }
             this.velocity = velocity;
         }
+
     }
 }

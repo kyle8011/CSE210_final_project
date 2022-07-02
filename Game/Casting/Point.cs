@@ -1,4 +1,4 @@
-namespace unit06_game.Casting
+namespace unit05_cycle_Team.Game.Casting
 {
     /// <summary>
     /// <para>A distance from a relative origin (0, 0).</para>
@@ -9,8 +9,8 @@ namespace unit06_game.Casting
     /// </summary>
     public class Point
     {
-        private int x;
-        private int y;
+        private int x = 0;
+        private int y = 0;
 
         /// <summary>
         /// Constructs a new instance of Point using the given x and y values.

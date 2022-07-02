@@ -1,80 +1,134 @@
-using unit06_game.Casting;
+using System.Collections.Generic;
+using System.Reflection.Metadata;
+using Raylib_cs;
+using unit05_cycle_Team.Game.Casting;
 
 
-namespace unit06_game.Services
+namespace unit05_cycle_Team.Game.Services
 {
-    public interface VideoService
+    /// <summary>
+    /// <para>Outputs the game state.</para>
+    /// <para>
+    /// The responsibility of the class of objects is to draw the game state on the screen. 
+    /// </para>
+    /// </summary>
+    public class VideoService
     {
+        private bool debug = false;
 
         /// <summary>
-        /// Prepares the buffer for drawing.
+        /// Constructs a new instance of KeyboardService using the given cell size.
         /// </summary>
-        void ClearBuffer();
+        /// <param name="cellSize">The cell size (in pixels).</param>
+        public VideoService(bool debug)
+        {
+            this.debug = debug;
+        }
 
         /// <summary>
-        /// Draws the given image at the given position.
+        /// Closes the window and releases all resources.
         /// </summary>
-        /// <param name="image">The given image.</param>
-        /// <param name="position">The given position.</param>
-        void DrawImage(Image image, Point position);
+        public void CloseWindow()
+        {
+            Raylib.CloseWindow();
+        }
 
         /// <summary>
-        /// Draws a rectangle at the given position.
+        /// Clears the buffer in preparation for the next rendering. This method should be called at
+        /// the beginning of the game's output phase.
         /// </summary>
-        /// <param name="size">The given size.</param>
-        /// <param name="position">The given position.</param>
-        /// <param name="color">The given color.</param>
-        /// <param name="filled">Whether or not the rectangle should be filled.</param>
-        void DrawRectangle(Point size, Point position, Casting.Color color, bool filled);
+        public void ClearBuffer()
+        {
+            Raylib.BeginDrawing();
+            Raylib.ClearBackground(Raylib_cs.Color.BLACK);
+            if (debug)
+            {
+                DrawGrid();
+            }
+        }
 
         /// <summary>
-        /// Draws the given text at the given position.
+        /// Draws the given actor's text on the screen.
         /// </summary>
-        /// <param name="text">The given text.</param>
-        /// <param name="position">The given position.</param>
-        void DrawText(Text text, Point position);
+        /// <param name="actor">The actor to draw.</param>
+        public void DrawActor(Actor actor)
+        {
+            string text = actor.GetText();
+            int x = actor.GetPosition().GetX();
+            int y = actor.GetPosition().GetY();
+            int fontSize = actor.GetFontSize();
+            Casting.Color c = actor.GetColor();
+            Raylib_cs.Color color = ToRaylibColor(c);
+            Raylib.DrawText(text, x, y, fontSize, color);
+        }
 
         /// <summary>
-        /// Swaps the buffers, displaying everything that has been drawn on the screen.
+        /// Draws the given list of actors on the screen.
         /// </summary>
-        void FlushBuffer();
+        /// <param name="actors">The list of actors to draw.</param>
+        public void DrawActors(List<Actor> actors)
+        {
+            foreach (Actor actor in actors)
+            {
+                DrawActor(actor);
+            }
+        }
+        
+        /// <summary>
+        /// Copies the buffer contents to the screen. This method should be called at the end of
+        /// the game's output phase.
+        /// </summary>
+        public void FlushBuffer()
+        {
+            Raylib.EndDrawing();
+        }
 
         /// <summary>
-        /// Initializes the video device.
+        /// Whether or not the window is still open.
         /// </summary>
-        void Initialize();
+        /// <returns>True if the window is open; false if otherwise.</returns>
+        public bool IsWindowOpen()
+        {
+            return !Raylib.WindowShouldClose();
+        }
 
         /// <summary>
-        /// Whether or not the window is open.
+        /// Opens a new window with the provided title.
         /// </summary>
-        /// <returns>True if the window is open; false if it is closing.</returns>
-        bool IsWindowOpen();
+        public void OpenWindow()
+        {
+            Raylib.InitWindow(Constants.MAX_X, Constants.MAX_Y, Constants.CAPTION);
+            Raylib.SetTargetFPS(Constants.FRAME_RATE);
+        }
 
         /// <summary>
-        /// Loads all the font files in the given directory.
+        /// Draws a grid on the screen.
         /// </summary>
-        /// <param name="directory">The given directory.</param>
-        void LoadFonts(string directory);
+        private void DrawGrid()
+        {
+            for (int x = 0; x < Constants.MAX_X; x += Constants.CELL_SIZE)
+            {
+                Raylib.DrawLine(x, 0, x, Constants.MAX_Y, Raylib_cs.Color.GRAY);
+            }
+            for (int y = 0; y < Constants.MAX_Y; y += Constants.CELL_SIZE)
+            {
+                Raylib.DrawLine(0, y, Constants.MAX_X, y, Raylib_cs.Color.GRAY);
+            }
+        }
 
         /// <summary>
-        /// Loads all the images files in the given directory.
+        /// Converts the given color to it's Raylib equivalent.
         /// </summary>
-        /// <param name="directory">The given directory.</param>
-        void LoadImages(string directory);
+        /// <param name="color">The color to convert.</param>
+        /// <returns>A Raylib color.</returns>
+        private Raylib_cs.Color ToRaylibColor(Casting.Color color)
+        {
+            int r = color.GetRed();
+            int g = color.GetGreen();
+            int b = color.GetBlue();
+            int a = color.GetAlpha();
+            return new Raylib_cs.Color(r, g, b, a);
+        }
 
-        /// <summary>
-        /// Releases the video device.
-        /// </summary>
-        void Release();
-
-        /// <summary>
-        /// Unloads the cached images.
-        /// </summary>
-        void UnloadFonts();
-
-        /// <summary>
-        /// Unloads the cached fonts.
-        /// </summary>
-        void UnloadImages();
     }
 }
