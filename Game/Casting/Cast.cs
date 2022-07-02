@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-namespace unit05_cycle_Team.Game.Casting
+namespace unit06_game.Game.Casting
 {
     /// <summary>
     /// <para>A collection of actors.</para>
@@ -13,6 +13,7 @@ namespace unit05_cycle_Team.Game.Casting
     public class Cast
     {
         private Dictionary<string, List<Actor>> actors = new Dictionary<string, List<Actor>>();
+        private Dictionary<string, List<Enemy>> enemies = new Dictionary<string, List<Enemy>>();
 
         /// <summary>
         /// Constructs a new instance of Cast.
@@ -38,6 +39,17 @@ namespace unit05_cycle_Team.Game.Casting
                 actors[group].Add(actor);
             }
         }
+        public void AddEnemy(string group, Enemy enemy)
+        {
+            if (!enemies.ContainsKey(group))
+            {
+                enemies[group] = new List<Enemy>();
+            }
+            if (!enemies[group].Contains(enemy))
+            {
+                enemies[group].Add(enemy);
+            }
+        }
 
         /// <summary>
         /// Gets the actors in the given group. Returns an empty list if there aren't any.
@@ -50,6 +62,15 @@ namespace unit05_cycle_Team.Game.Casting
             if (actors.ContainsKey(group))
             {
                 results.AddRange(actors[group]);
+            }
+            return results;
+        }
+        public List<Enemy> GetEnemies(string group)
+        {
+            List<Enemy> results = new List<Enemy>();
+            if (enemies.ContainsKey(group))
+            {
+                results.AddRange(enemies[group]);
             }
             return results;
         }

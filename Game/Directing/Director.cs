@@ -1,10 +1,11 @@
 using System.Collections.Generic;
-using unit05_cycle_Team.Game.Casting;
-using unit05_cycle_Team.Game.Scripting;
-using unit05_cycle_Team.Game.Services;
+using unit06_game.Game.Casting;
+using unit06_game.Game.Scripting;
+using unit06_game.Game.Services;
+using Raylib_cs;
 
 
-namespace unit05_cycle_Team.Game.Directing
+namespace unit06_game.Game.Directing
 {
     /// <summary>
     /// <para>A person who directs the game.</para>
@@ -33,6 +34,7 @@ namespace unit05_cycle_Team.Game.Directing
         public void StartGame(Cast cast, Script script)
         {
             videoService.OpenWindow();
+            Raylib.ClearBackground(Raylib_cs.Color.BLUE);
             while (videoService.IsWindowOpen())
             {
                 ExecuteActions("input", cast, script);

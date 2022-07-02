@@ -1,8 +1,8 @@
-using unit05_cycle_Team.Game.Casting;
-using unit05_cycle_Team.Game.Services;
+using unit06_game.Game.Casting;
+using unit06_game.Game.Services;
 
 
-namespace unit05_cycle_Team.Game.Scripting
+namespace unit06_game.Game.Scripting
 {
     /// <summary>
     /// <para>An input action that controls the snake.</para>
@@ -33,10 +33,10 @@ namespace unit05_cycle_Team.Game.Scripting
                 direction2 = new Point(0, -Constants.CELL_SIZE);
                 initial = false;
             }
-            Time score1 = (Time)cast.GetFirstActor("score1");
-            score1.AddTime(cast);
-            Time score2 = (Time)cast.GetFirstActor("score2");
-            score2.AddTime(cast);
+            //Time score1 = (Time)cast.GetFirstActor("score1");
+            //score1.AddTime(cast);
+            //Time score2 = (Time)cast.GetFirstActor("score2");
+            //score2.AddTime(cast);
             // left
             if (keyboardService.IsKeyDown("a"))
             {   
@@ -85,10 +85,10 @@ namespace unit05_cycle_Team.Game.Scripting
                 direction2 = new Point(0, Constants.CELL_SIZE);}
             }
 
-            Snake snake1 = (Snake)cast.GetFirstActor("snake");
-            snake1.TurnHead(direction1);
-            Snake snake2 = (Snake)cast.GetSecondActor("snake");
-            snake2.TurnHead(direction2);
+            //Snake snake1 = (Snake)cast.GetFirstActor("snake");
+            //snake1.TurnHead(direction1);
+            //Snake snake2 = (Snake)cast.GetSecondActor("snake");
+            //snake2.TurnHead(direction2);
 
         }
     }

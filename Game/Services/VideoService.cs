@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Reflection.Metadata;
 using Raylib_cs;
-using unit05_cycle_Team.Game.Casting;
+using unit06_game.Game.Casting;
 
 
-namespace unit05_cycle_Team.Game.Services
+namespace unit06_game.Game.Services
 {
     /// <summary>
     /// <para>Outputs the game state.</para>
@@ -40,7 +40,7 @@ namespace unit05_cycle_Team.Game.Services
         public void ClearBuffer()
         {
             Raylib.BeginDrawing();
-            Raylib.ClearBackground(Raylib_cs.Color.BLACK);
+            Raylib.ClearBackground(Raylib_cs.Color.PURPLE);
             if (debug)
             {
                 DrawGrid();
@@ -62,6 +62,34 @@ namespace unit05_cycle_Team.Game.Services
             Raylib.DrawText(text, x, y, fontSize, color);
         }
 
+        public void DrawEnemy(Enemy actor)
+        {
+            string text = actor.GetText();
+            int x = actor.GetPosition().GetX();
+            int y = actor.GetPosition().GetY();
+            int fontSize = actor.GetFontSize();
+            Casting.Color c = actor.GetColor();
+            Raylib_cs.Color color = ToRaylibColor(c);
+            Raylib.DrawText(text, x, y, fontSize, color);
+        }        
+
+        public void DrawRectangle(Casting.Point size, Casting.Point position, Casting.Color color, bool filled)
+        {
+            int x = position.GetX();
+            int y = position.GetY();
+            int width = size.GetX();
+            int height = size.GetY();
+            Raylib_cs.Color raylibColor = ToRaylibColor(color);
+            if (filled)
+            {
+                Raylib.DrawRectangle(x, y, width, height, raylibColor);
+            }
+            else
+            {
+                Raylib.DrawRectangleLines(x, y, width, height, raylibColor);
+            }
+        }
+
         /// <summary>
         /// Draws the given list of actors on the screen.
         /// </summary>
@@ -71,6 +99,14 @@ namespace unit05_cycle_Team.Game.Services
             foreach (Actor actor in actors)
             {
                 DrawActor(actor);
+            }
+        }
+
+        public void DrawEnemies(List<Enemy> actors)
+        {
+            foreach (Enemy actor in actors)
+            {
+                DrawEnemy(actor);
             }
         }
         

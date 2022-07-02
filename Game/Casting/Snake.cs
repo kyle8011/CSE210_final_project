@@ -1,9 +1,9 @@
 using System;
-using unit05_cycle_Team.Game.Scripting;
+using unit06_game.Game.Scripting;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace unit05_cycle_Team.Game.Casting
+namespace unit06_game.Game.Casting
 {
     /// <summary>
     /// <para>A long limbless reptile.</para>

@@ -1,7 +1,7 @@
-using unit05_cycle_Team.Game.Casting;
+using unit06_game.Game.Casting;
 
 
-namespace unit05_cycle_Team.Game.Scripting 
+namespace unit06_game.Game.Scripting 
 {
     /// <summary>
     /// <para>A thing that is done.</para>
