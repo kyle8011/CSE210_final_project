@@ -1,84 +1,61 @@
 using System;
-using System.Collections.Generic;
+using unit06_game.Game.Casting;
+using unit06_game.Game.Scripting;
+using Raylib_cs;
 
 
-namespace UNIT06_GAME.Casting
+namespace unit06_game.Game.Casting
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    public class Ball : Actor
+    public class Enemy : Actor
     {
-        private static Random random = new Random();
-
-        private Body body;
-        private Image image;
-
+        private int health;
+        private int max_health;
+        private int points;
+        private Color color;
+        private Point position;
+        private Cast cast;
+        private Point velocity = new Point(0, 0);
         /// <summary>
-        /// Constructs a new instance of Actor.
+        /// Creates an instance of an enemy
         /// </summary>
-        public Ball(Body body, Image image, bool debug = false) : base(debug)
+        public Enemy(Cast cast)
         {
-            this.body = body;
-            this.image = image;
+            this.position = new Point (10, Constants.MAX_Y / 2);
+            this.cast = cast;
+            SetText("U");
+            SetPosition(position); 
+            SetVelocity(new Point (5, 0));
+            SetColor(new Color (200, 0, 0));
+            SetHealth(0);
+        }
+        public override void MoveNext()
+        {
+            int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
+            int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
+            position = new Point(x, y);
         }
 
-        /// <summary>
-        /// Bounces the ball horizontally.
-        /// </summary>
-        public void BounceX()
+        public void SetHealth(int damage)
         {
-            Point velocity = body.GetVelocity();
-            double rn = (random.NextDouble() * (1.2 - 0.8) + 0.8);
-            double vx = velocity.GetX() * -1;
-            double vy = velocity.GetY();
-            Point newVelocity = new Point((int)vx, (int)vy);
-            body.SetVelocity(newVelocity);
+            Stats stats = new Stats();
+            max_health = stats.GetWave() * 100; 
+            health = health - damage;
         }
 
-        /// <summary>
-        /// Bounces the ball vertically.
-        /// </summary>
-        public void BounceY()
+        public int GetHealth()
         {
-            Point velocity = body.GetVelocity();
-            double rn = (random.NextDouble() * (1.2 - 0.8) + 0.8);
-            double vx = velocity.GetX();
-            double vy = velocity.GetY() * -1;
-            Point newVelocity = new Point((int)vx, (int)vy);
-            body.SetVelocity(newVelocity);
-        }
-        
-        /// <summary>
-        /// Gets the body.
-        /// </summary>
-        /// <returns>The body.</returns>
-        public Body GetBody()
-        {
-            return body;
+            return health;
         }
 
-        /// <summary>
-        /// Gets the image.
-        /// </summary>
-        /// <returns>The image.</returns>
-        public Image GetImage()
+        public int GetMaxHealth()
         {
-            return image;
+            return max_health;
         }
 
-        /// <summary>
-        /// Releases ball in random horizontal direction.
-        /// </summary>
-        public void Release()
+        public Point GetHealthBarPosition()
         {
-            Point velocity = body.GetVelocity();
-            List<int> velocities = new List<int> {Constants.BALL_VELOCITY, Constants.BALL_VELOCITY};
-            int index = random.Next(velocities.Count);
-            double vx = velocities[index];
-            double vy = -Constants.BALL_VELOCITY;
-            Point newVelocity = new Point((int)vx, (int)vy);
-            body.SetVelocity(newVelocity);
+            Point HealthBarPosition = GetPosition().Add(new Point (-5, -15));
+            return HealthBarPosition;
         }
     }
 }

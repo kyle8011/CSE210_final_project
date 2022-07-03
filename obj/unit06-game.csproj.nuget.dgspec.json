@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210\\Prove_Assignments\\unit06-game\\unit06-game.csproj": {}
+    "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210\\Prove_Assignments\\unit06-game\\unit06-game.csproj": {
+    "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210\\Prove_Assignments\\unit06-game\\unit06-game.csproj",
+        "projectUniqueName": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj",
         "projectName": "unit06-game",
-        "projectPath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210\\Prove_Assignments\\unit06-game\\unit06-game.csproj",
+        "projectPath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj",
         "packagesPath": "C:\\Users\\kyle8\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210\\Prove_Assignments\\unit06-game\\obj\\",
+        "outputPath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kyle8\\AppData\\Roaming\\NuGet\\NuGet.Config"

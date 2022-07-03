@@ -1,88 +1,37 @@
-namespace UNIT06_GAME.Casting
+using unit06_game.Game.Casting;
+namespace unit06_game.Game.Casting
 {
-    /// <summary>
-    /// A thing that participates in the game.
-    /// </summary>
+    
     public class Stats : Actor
     {
-        private int level;
+        private int wave;
         private int lives;
-        private int score;
+        private int gold;
 
-        /// <summary>
-        /// Constructs a new instance of Actor.
-        /// </summary>
-        public Stats(int level = 1, int lives = 3, int score = 0, 
-                bool debug = false) : base(debug)
+        public Stats(int wave = 1, int lives = 10, int gold = 200)
         {
-            this.level = level;
+            this.wave = wave;
             this.lives = lives;
-            this.score = score;
+            this.gold = gold;
         }
 
-        /// <summary>
-        /// Adds one level.
-        /// </summary>
-        public void AddLevel()
+        public void AddWave()
         {
-            level++;
+            wave++;
         }
 
-        /// <summary>
-        /// Adds an extra life.
-        /// </summary>
-        public void AddLife()
+        public int GetWave()
         {
-            lives++;
+            return wave;
+        }
+        public void AddGold()
+        {
+            gold += 10 * wave;
         }
 
-        /// <summary>
-        /// Adds the given points to the score.
-        /// </summary>
-        /// <param name="points">The given points.</param>
-        public void AddPoints(int points)
+        public int GetGold()
         {
-            score += points;
+            return gold;
         }
-
-        /// <summary>
-        /// Gets the level.
-        /// </summary>
-        /// <returns>The level.</returns>
-        public int GetLevel()
-        {
-            return level;
-        }
-
-        /// <summary>
-        /// Gets the lives.
-        /// </summary>
-        /// <returns>The lives.</returns>
-        public int GetLives()
-        {
-            return lives;
-        }
-
-        /// <summary>
-        /// Gets the score.
-        /// </summary>
-        /// <returns>The score.</returns>
-        public int GetScore()
-        {
-            return score;
-        }
-
-        /// <summary>
-        /// Removes a life.
-        /// </summary>
-        public void RemoveLife()
-        {
-            lives--;
-            if (lives <= 0)
-            {
-                lives = 0;
-            }
-        }
-        
     }
 }

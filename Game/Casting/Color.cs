@@ -1,28 +1,36 @@
-namespace UNIT06_GAME.Casting
+using System.Collections.Generic;
+
+
+namespace unit06_game.Game.Casting
 {
     /// <summary>
-    /// A color.
+    /// <para>A color.</para>
+    /// <para>The responsibility of Color is to hold and provide information about itself. Color has 
+    /// a few convenience methods for comparing and converting them.
+    /// </para>
     /// </summary>
     public class Color
     {
-        private int red;
-        private int green;
-        private int blue;
-        private int alpha;
+        private int red = 0;
+        private int green = 0;
+        private int blue = 0;
+        private int alpha = 255;
 
         /// <summary>
-        /// Constructs a new instance of Color.
+        /// Constructs a new instance of Color using the given red, green and blue values.
         /// </summary>
-        public Color(int red, int green, int blue, int alpha = 255)
+        /// <param name="red">The given red value (0-255).</param>
+        /// <param name="green">The given green value (0-255).</param>
+        /// <param name="blue">The given blue value (0-255).</param>
+        public Color(int red, int green, int blue)
         {
             this.red = red;
             this.green = green;
             this.blue = blue;
-            this.alpha = alpha;
         }
 
         /// <summary>
-        /// Gets the alpha value.
+        /// Gets the color's alpha value.
         /// </summary>
         /// <returns>The alpha value.</returns>
         public int GetAlpha()
@@ -31,7 +39,7 @@ namespace UNIT06_GAME.Casting
         }
 
         /// <summary>
-        /// Gets the blue value.
+        /// Gets the color's blue value.
         /// </summary>
         /// <returns>The blue value.</returns>
         public int GetBlue()
@@ -40,7 +48,7 @@ namespace UNIT06_GAME.Casting
         }
 
         /// <summary>
-        /// Gets the green value.
+        /// Gets the color's green value.
         /// </summary>
         /// <returns>The green value.</returns>
         public int GetGreen()
@@ -49,7 +57,7 @@ namespace UNIT06_GAME.Casting
         }
 
         /// <summary>
-        /// Gets the red value.
+        /// Gets the color's red value.
         /// </summary>
         /// <returns>The red value.</returns>
         public int GetRed()
@@ -57,6 +65,5 @@ namespace UNIT06_GAME.Casting
             return red;
         }
 
-        
     }
 }

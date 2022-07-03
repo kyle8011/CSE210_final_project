@@ -1,4 +1,4 @@
-namespace UNIT06_GAME.Casting
+namespace Unit06_game.Game.Casting
 {
     /// <summary>
     /// An image.

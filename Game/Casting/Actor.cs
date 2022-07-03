@@ -1,7 +1,14 @@
-namespace UNIT06_GAME.Casting
+using System;
+using unit06_game.Game.Casting;
+
+namespace unit06_game.Game.Casting
 {
     /// <summary>
-    /// A thing that participates in the game.
+    /// <para>A thing that participates in the game.</para>
+    /// <para>
+    /// The responsibility of Actor is to keep track of its appearance, position and velocity in 2d 
+    /// space.
+    /// </para>
     /// </summary>
     public class Actor
     {
@@ -146,5 +153,6 @@ namespace UNIT06_GAME.Casting
             }
             this.velocity = velocity;
         }
+
     }
 }

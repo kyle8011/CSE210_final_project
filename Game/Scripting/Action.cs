@@ -1,10 +1,14 @@
-using UNIT06_GAME.Casting;
+using unit06_game.Game.Casting;
 
 
-namespace UNIT06_GAME.Scripting 
+namespace unit06_game.Game.Scripting 
 {
     /// <summary>
-    /// A thing that is done in the game.
+    /// <para>A thing that is done.</para>
+    /// <para>
+    /// The responsibility of action is to do something that is integral or important in the game. 
+    /// Thus, it has one method, Execute(...), which should be overridden by derived classes.
+    /// </para>
     /// </summary>
     public interface Action
     {
@@ -14,6 +18,6 @@ namespace UNIT06_GAME.Scripting
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
         /// <param name="script">The script of actions.</param>
-        void Execute(Cast cast, Script script, ActionCallback callback);
+        void Execute(Cast cast, Script script);
     }
 }
