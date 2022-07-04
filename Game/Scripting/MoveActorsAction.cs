@@ -22,10 +22,7 @@ namespace unit06_game.Game.Scripting
         /// <summary>
         /// Constructs a new instance of MoveActorsAction.
         /// </summary>
-        public MoveActorsAction()
-        {
-
-        }
+        public MoveActorsAction(){}
 
         // 3) Override the Execute(Cast cast, Script script) method. Use the following 
         //    method comment. Your custom implementation should do the following:

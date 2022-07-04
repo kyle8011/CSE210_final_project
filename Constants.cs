@@ -20,13 +20,12 @@ namespace unit06_game.Game
 
         public static int FRAME_RATE = 15;
         public static int FONT_SIZE = 15;
-        public static string CAPTION = "Snake";
+        public static string CAPTION = "Tower Game";
 
         public static Color RED = new Color(255, 0, 0);
         public static Color WHITE = new Color(255, 255, 255);
         public static Color YELLOW = new Color(255, 255, 0);
         public static Color GREEN = new Color(0, 255, 0);
-
     }
 }
 

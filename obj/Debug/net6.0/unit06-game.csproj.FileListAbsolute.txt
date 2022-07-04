@@ -40,3 +40,24 @@ C:\Users\kyle8\OneDrive\Desktop\CSE 210 Group\unit06-game\obj\Debug\net6.0\refin
 C:\Users\kyle8\OneDrive\Desktop\CSE 210 Group\unit06-game\obj\Debug\net6.0\unit06-game.pdb
 C:\Users\kyle8\OneDrive\Desktop\CSE 210 Group\unit06-game\obj\Debug\net6.0\unit06-game.genruntimeconfig.cache
 C:\Users\kyle8\OneDrive\Desktop\CSE 210 Group\unit06-game\obj\Debug\net6.0\ref\unit06-game.dll
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\bin\Debug\net6.0\unit06-game.exe
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\bin\Debug\net6.0\unit06-game.deps.json
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\bin\Debug\net6.0\unit06-game.runtimeconfig.json
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\bin\Debug\net6.0\unit06-game.dll
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\bin\Debug\net6.0\unit06-game.pdb
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\bin\Debug\net6.0\Raylib-cs.dll
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\bin\Debug\net6.0\runtimes\linux-x64\native\libraylib.so
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\bin\Debug\net6.0\runtimes\osx-x64\native\libraylib.dylib
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\bin\Debug\net6.0\runtimes\win-x64\native\raylib.dll
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\bin\Debug\net6.0\runtimes\win-x86\native\raylib.dll
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\unit06-game.csproj.AssemblyReference.cache
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\unit06-game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\unit06-game.AssemblyInfoInputs.cache
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\unit06-game.AssemblyInfo.cs
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\unit06-game.csproj.CoreCompileInputs.cache
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\unit06-game.csproj.CopyComplete
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\unit06-game.dll
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\refint\unit06-game.dll
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\unit06-game.pdb
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\unit06-game.genruntimeconfig.cache
+C:\Users\Jayson\Documents\BYUI\CSE210_final_project\obj\Debug\net6.0\ref\unit06-game.dll

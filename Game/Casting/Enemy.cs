@@ -10,7 +10,14 @@ namespace unit06_game.Game.Casting
     {
         private int health;
         private int max_health;
+<<<<<<< HEAD
         private Point position = new Point(0, 0);
+=======
+        private int points;
+       
+        private Point position;
+        private Cast cast;
+>>>>>>> f58cc8c05bcc79c834ed84c7ea3875e41ce36bda
         private Point velocity = new Point(0, 0);
         private Cast cast;
         private bool is_alive = true;
