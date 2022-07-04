@@ -132,7 +132,6 @@ namespace unit06_game.Game.Services
                 DrawEnemy(actor);
             }
         }
-<<<<<<< HEAD
         ///</inheritdoc>
         //public void DrawImage(Casting.Photo image, Point position)
         //{
@@ -147,18 +146,6 @@ namespace unit06_game.Game.Services
         //    int y = position.GetY();
         //    Raylib.DrawTexture(texture, x, y, Raylib_cs.Color.WHITE);
         //}
-=======
-
-        public void DrawPath(Path path)
-        {
-            foreach(Point point in path.GetPath())
-            {   //each rectange requires a point size, position, color, and a bool if filled or not
-                int size = Constants.CELL_SIZE;
-                Point pointSize =new Point(size,size);
-                DrawRectangle(pointSize,point,Constants.RED,true);
-            }
-        }
->>>>>>> f58cc8c05bcc79c834ed84c7ea3875e41ce36bda
         
         /// <summary>
         /// Copies the buffer contents to the screen. This method should be called at the end of

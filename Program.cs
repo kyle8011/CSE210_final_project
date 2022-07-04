@@ -19,12 +19,7 @@ namespace unit06_game
            
             // create the cast
             Cast cast = new Cast();
-<<<<<<< HEAD
             //cast.AddEnemy("enemy", new Enemy(cast));
-=======
-            cast.AddEnemy("enemy", new Enemy(cast));
-
->>>>>>> f58cc8c05bcc79c834ed84c7ea3875e41ce36bda
             //cast.AddActor("snake", new Snake(1));
             //cast.AddActor("snake", new Snake(2));
             //cast.AddActor("score1", new Time(cast));
@@ -47,8 +42,8 @@ namespace unit06_game
 //------------------adding a new path, it can be improved------------------------------------
             Path path = new Path();
             path.MakePath();
-            cast.AddActor("path",path);
-            script.AddAction("output",new DrawPathAction(videoService,path));
+            cast.AddActor("path", path);
+            script.AddAction("output", new DrawPathAction(videoService, path));
 //--------------------------------------------------------------------------------------------
 //------------------adding a new test enemy, it can be improved------------------------------------
         //    TestEnemy enemy = new TestEnemy();

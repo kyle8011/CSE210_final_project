@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using unit06_game.Game.Casting;
 using unit06_game.Game.Scripting;
 using Raylib_cs;
@@ -10,27 +10,27 @@ namespace unit06_game.Game.Casting
     {
         private int health;
         private int max_health;
-<<<<<<< HEAD
         private Point position = new Point(0, 0);
-=======
-        private int points;
-       
-        private Point position;
-        private Cast cast;
->>>>>>> f58cc8c05bcc79c834ed84c7ea3875e41ce36bda
         private Point velocity = new Point(0, 0);
         private Cast cast;
+        private Path path;
         private bool is_alive = true;
         /// <summary>
         /// Creates an instance of an enemy
         /// </summary>
-        public Enemy(Cast cast)
+        public Enemy(Cast cast, Path path)
         {
             this.position = new Point (10, Constants.MAX_Y / 2);
             this.cast = cast;
+            this.path = path;
+            //List<Point> points = path.GetPath();
+            //foreach (Point point in points) {
+            //    Point velocity = new Point();
+                SetVelocity(new Point (5, 0));
+            //}
             SetText("M");
             SetPosition(position); 
-            SetVelocity(new Point (5, 0));
+            
             SetColor(new Color (200, 0, 0));
             SetHealth(0);
         }

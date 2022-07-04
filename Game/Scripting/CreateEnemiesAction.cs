@@ -14,9 +14,10 @@ namespace unit06_game.Game.Scripting
         public void Execute(Cast cast, Script script)
         {
             time += 1;
+            Path path = (Path) cast.GetFirstActor("path");
             List<Enemy> enemies = cast.GetEnemies("enemy");
-            if (enemies.Count < 11 && time % 10 == 1){
-            cast.AddEnemy("enemy", new Enemy(cast));
+            if (enemies.Count < 10 && time % 10 == 1){
+            cast.AddEnemy("enemy", new Enemy(cast, path));
             }
         }
     }

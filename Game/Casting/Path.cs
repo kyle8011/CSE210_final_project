@@ -36,9 +36,9 @@ namespace unit06_game.Game.Casting
         /// <param name="velocity">The given direction.</param>
         public void MakePath()
         {   int variable_x = 0;
-            int constant_y = Constants.MAX_Y/2+150;
+            int constant_y = Constants.MAX_Y/2 - 10;
 
-            for(int i=0;i<Constants.MAX_X;i++)
+            for(int i=0; i < Constants.MAX_X; i = i + 100)
             {
                 Point point = new Point(variable_x+i,constant_y);       //I make a bunch of points, and those points are added to the path
                 this.Points.Add(point);                                 //for the future each level is a script that makes a path 
