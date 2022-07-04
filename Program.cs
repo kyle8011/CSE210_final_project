@@ -45,6 +45,14 @@ namespace unit06_game
             cast.AddActor("path",path);
             script.AddAction("output",new DrawPathAction(videoService,path));
 //--------------------------------------------------------------------------------------------
+//------------------adding a new test enemy, it can be improved------------------------------------
+        //    TestEnemy enemy = new TestEnemy();
+        //    cast.AddActor("enemy", enemy);
+        //    Point velocity= new Point(15,0);
+        //    enemy.SetVelocity(velocity);
+        //    script.AddAction("output",new DrawTestEnemy(videoService,enemy,path));
+            //the test fail. another day I will fix this
+//--------------------------------------------------------------------------------------------
 
             // start the game
             Director director = new Director(videoService);

@@ -72,7 +72,13 @@ namespace unit06_game.Game.Services
             Raylib_cs.Color color = ToRaylibColor(c);
             Raylib.DrawText(text, x, y, fontSize, color);
         }        
-
+        /// <summary>
+        /// Draws a rectangle in a point given the width, height, position, color, and if it is filled or not.
+        /// </summary>
+        /// <param name="size">Point: info for width in x, and height in y</param>
+        /// <param name="position">Point: info for the position of the rectangle</param>
+        /// <param name="color">Color: A color class that sets the color of the rectangle in rgb (#red,#green,#blue)</param>
+        /// <param name="filled">Bool: wether or not the rectangle is filled</param>
         public void DrawRectangle(Casting.Point size, Casting.Point position, Casting.Color color, bool filled)
         {
             int x = position.GetX();
@@ -90,6 +96,7 @@ namespace unit06_game.Game.Services
             }
         }
 
+
         /// <summary>
         /// Draws the given list of actors on the screen.
         /// </summary>
@@ -100,6 +107,20 @@ namespace unit06_game.Game.Services
             {
                 DrawActor(actor);
             }
+        }
+         /// <summary>
+        /// Draws a test enemy. For this test they will be yellow rectangles.
+        /// </summary>
+        /// <param name="enemy">The test enemy to be drawn</param>
+        public void DrawTestEnemy(TestEnemy enemy)
+        {
+            Point position = enemy.GetPosition();
+            Casting.Color color = enemy.GetColor();
+            int size = Constants.CELL_SIZE;//the shape and size will be handle later
+            int x = size;  //for now the test enemies will be rectangles
+            int y = 2*size;
+            Point PointSize = new Point(x,y);
+            DrawRectangle(PointSize,position,color,true);
         }
 
         public void DrawEnemies(List<Enemy> actors)

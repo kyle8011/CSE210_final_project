@@ -13,7 +13,6 @@ namespace unit06_game.Game.Casting
     public class Path : Actor
     {
         private List<Point> Points = new List<Point>();
-        private Constants constants = new Constants();
 
         /// <summary>
         /// Constructs a new instance of a path.

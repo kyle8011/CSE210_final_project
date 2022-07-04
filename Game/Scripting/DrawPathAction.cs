@@ -14,11 +14,10 @@ namespace unit06_game.Game.Scripting
     {
         private VideoService videoService;
         private Path path;
-        private Constants constants;
         private Color PathColor = new Color(0,0,0) ;
 
         /// <summary>
-        /// Constructs a new instance of DrawPath using the given KeyboardService.
+        /// Constructs a new instance of DrawPath using VideoService and a Path.
         /// </summary>
         public DrawPathAction(VideoService videoService,Path path)
         {

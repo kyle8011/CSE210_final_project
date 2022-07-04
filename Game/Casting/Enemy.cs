@@ -11,7 +11,7 @@ namespace unit06_game.Game.Casting
         private int health;
         private int max_health;
         private int points;
-        private Color color;
+       
         private Point position;
         private Cast cast;
         private Point velocity = new Point(0, 0);
