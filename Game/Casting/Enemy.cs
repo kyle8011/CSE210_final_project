@@ -10,11 +10,10 @@ namespace unit06_game.Game.Casting
     {
         private int health;
         private int max_health;
-        private int points;
-        private Color color;
-        private Point position;
-        private Cast cast;
+        private Point position = new Point(0, 0);
         private Point velocity = new Point(0, 0);
+        private Cast cast;
+        private bool is_alive = true;
         /// <summary>
         /// Creates an instance of an enemy
         /// </summary>
@@ -22,22 +21,25 @@ namespace unit06_game.Game.Casting
         {
             this.position = new Point (10, Constants.MAX_Y / 2);
             this.cast = cast;
-            SetText("U");
+            SetText("M");
             SetPosition(position); 
             SetVelocity(new Point (5, 0));
             SetColor(new Color (200, 0, 0));
             SetHealth(0);
         }
-        public override void MoveNext()
-        {
-            int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
-            int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
-            position = new Point(x, y);
-        }
+        //public override void MoveNext()
+        //{
+        //    //if (GetAliveStatus())
+        //    //{
+        //    int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
+        //    int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
+        //    position = new Point(x, y);
+        //    //}
+        //}
 
         public void SetHealth(int damage)
         {
-            Stats stats = new Stats();
+            Stats stats = new Stats(cast);
             max_health = stats.GetWave() * 100; 
             health = health - damage;
         }
@@ -56,6 +58,16 @@ namespace unit06_game.Game.Casting
         {
             Point HealthBarPosition = GetPosition().Add(new Point (-5, -15));
             return HealthBarPosition;
+        }
+
+        public bool GetAliveStatus()
+        {
+            if (health >= 1)// && GetPosition().GetX() < 10)
+            {
+                is_alive = true;
+            }
+            else {is_alive = false;}
+            return is_alive;
         }
     }
 }

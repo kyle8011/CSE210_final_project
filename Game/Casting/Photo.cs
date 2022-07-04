@@ -1,18 +1,18 @@
 namespace Unit06_game.Game.Casting
 {
     /// <summary>
-    /// An image.
+    /// An photo.
     /// </summary>
-    public class Image
+    public class Photo
     {
         private string filename;
         private double scale;
         private int rotation;
 
         /// <summary>
-        /// Constructs a new instance of Image.
+        /// Constructs a new instance of photo.
         /// </summary>
-        public Image(string filename, double scale = 1.0, int rotation = 0)
+        public Photo(string filename, double scale = 1.0, int rotation = 0)
         {
             this.filename = filename;
             this.scale = scale;

@@ -19,7 +19,7 @@ namespace unit06_game
            
             // create the cast
             Cast cast = new Cast();
-            cast.AddEnemy("enemy", new Enemy(cast));
+            //cast.AddEnemy("enemy", new Enemy(cast));
             //cast.AddActor("snake", new Snake(1));
             //cast.AddActor("snake", new Snake(2));
             //cast.AddActor("score1", new Time(cast));
@@ -33,6 +33,7 @@ namespace unit06_game
             // create the script
             Script script = new Script();
             script.AddAction("input", new ControlActorsAction(keyboardService));
+            script.AddAction("update", new CreateEnemiesAction());
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new MoveEnemiesAction());
             script.AddAction("output", new DrawActorsAction(videoService));

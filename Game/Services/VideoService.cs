@@ -14,6 +14,8 @@ namespace unit06_game.Game.Services
     /// </summary>
     public class VideoService
     {
+        private Dictionary<string, Raylib_cs.Texture2D> textures
+            = new Dictionary<string, Raylib_cs.Texture2D>();
         private bool debug = false;
 
         /// <summary>
@@ -109,6 +111,20 @@ namespace unit06_game.Game.Services
                 DrawEnemy(actor);
             }
         }
+        ///</inheritdoc>
+        //public void DrawImage(Casting.Photo image, Point position)
+        //{
+        //    string filename = image.GetFilename();
+        //    if (!textures.ContainsKey(filename))
+        //    {
+        //        Raylib_cs.Texture2D loaded = Raylib.LoadTexture(filename);
+        //        textures[filename] = loaded;
+        //    }
+        //    Raylib_cs.Texture2D texture = textures[filename];
+        //    int x = position.GetX();
+        //    int y = position.GetY();
+        //    Raylib.DrawTexture(texture, x, y, Raylib_cs.Color.WHITE);
+        //}
         
         /// <summary>
         /// Copies the buffer contents to the screen. This method should be called at the end of
