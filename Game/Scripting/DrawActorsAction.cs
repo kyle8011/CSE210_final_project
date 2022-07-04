@@ -30,7 +30,9 @@ namespace unit06_game.Game.Scripting
             //score1.SetPosition(Score1Position);
             //Point Score2Position = new Point(Constants.MAX_X-200,0);
             //score2.SetPosition(Score2Position);
-            List<Actor> messages = cast.GetActors("messages");
+            Actor gold = cast.GetFirstActor("gold");          
+            Actor wave = cast.GetFirstActor("wave");
+            Actor lives = cast.GetFirstActor("lives");
             
             videoService.ClearBuffer();
             videoService.DrawEnemies(enemies);
@@ -42,7 +44,9 @@ namespace unit06_game.Game.Scripting
                 videoService.DrawRectangle(new Point (40, 40), tower.GetPosition(), tower.GetColor(), true);
             }
             //videoService.DrawActors(towers);
-            videoService.DrawActors(messages);
+            videoService.DrawActor(gold);
+            videoService.DrawActor(wave);
+            videoService.DrawActor(lives);
             // Draw the end zone
             videoService.DrawRectangle(new Point (100, 100), new Point (Constants.MAX_X - 100, Constants.MAX_Y / 2 - 50), new Color (0, 0, 200), true);
             

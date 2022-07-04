@@ -4,15 +4,13 @@ namespace unit06_game.Game.Casting
     
     public class Stats : Actor
     {
-        private int wave;
-        private int lives;
-        private int gold;
+        private int wave = 0;
+        private int lives = 10;
+        private int gold = 200;
         private bool inplay = false;
-        private List<bool> is_alive = new List<bool>();
         private Cast cast;
-        private int i;
 
-        public Stats(Cast cast, int wave = 1, int lives = 10, int gold = 200)
+        public Stats(Cast cast, int wave = 0, int lives = 10, int gold = 200)
         {
             this.wave = wave;
             this.lives = lives;
@@ -20,6 +18,7 @@ namespace unit06_game.Game.Casting
             this.cast = cast;
             
         }
+
         /// <summary>
         /// Subtracts one life.
         /// </summary>
@@ -74,7 +73,11 @@ namespace unit06_game.Game.Casting
             {
                 inplay = true;
             }
-            else {inplay = false;}
+            else 
+            {
+                inplay = false;
+                AddWave();
+            }
             return inplay;
         }
     }

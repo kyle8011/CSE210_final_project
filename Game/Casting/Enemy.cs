@@ -93,6 +93,7 @@ namespace unit06_game.Game.Casting
             {
                 stats.LoseLife();
                 Console.WriteLine(stats.GetLives());
+                stats.AddGold();
                 cast.RemoveEnemy("enemy", this);
             }
             return is_alive;

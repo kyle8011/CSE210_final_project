@@ -21,9 +21,9 @@ namespace unit06_game
             Cast cast = new Cast();
             cast.AddActor("tower", new Tower(cast));
             cast.AddActor("stats", new Stats(cast));
-            //cast.AddActor("snake", new Snake(2));
-            //cast.AddActor("score1", new Time(cast));
-            //cast.AddActor("score2", new Time(cast));
+            cast.AddActor("wave", new Display(cast, "wave"));
+            cast.AddActor("gold", new Display(cast, "gold"));
+            cast.AddActor("lives", new Display(cast, "lives"));
 
             // create the services
             KeyboardService keyboardService= new KeyboardService();
@@ -37,6 +37,7 @@ namespace unit06_game
             script.AddAction("update", new CreateEnemiesAction());
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new MoveEnemiesAction());
+            script.AddAction("update", new UpdateHudAction());
             script.AddAction("output", new DrawActorsAction(videoService));
 
 //------------------adding a new path, it can be improved------------------------------------
