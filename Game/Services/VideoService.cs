@@ -109,6 +109,16 @@ namespace unit06_game.Game.Services
                 DrawEnemy(actor);
             }
         }
+
+        public void DrawPath(Path path)
+        {
+            foreach(Point point in path.GetPath())
+            {   //each rectange requires a point size, position, color, and a bool if filled or not
+                int size = Constants.CELL_SIZE;
+                Point pointSize =new Point(size,size);
+                DrawRectangle(pointSize,point,Constants.RED,true);
+            }
+        }
         
         /// <summary>
         /// Copies the buffer contents to the screen. This method should be called at the end of

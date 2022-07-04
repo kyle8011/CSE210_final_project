@@ -20,6 +20,7 @@ namespace unit06_game
             // create the cast
             Cast cast = new Cast();
             cast.AddEnemy("enemy", new Enemy(cast));
+
             //cast.AddActor("snake", new Snake(1));
             //cast.AddActor("snake", new Snake(2));
             //cast.AddActor("score1", new Time(cast));
@@ -28,6 +29,7 @@ namespace unit06_game
             // create the services
             KeyboardService keyboardService= new KeyboardService();
             VideoService videoService = new VideoService(false);
+            MouseService mouseService = new MouseService();
             
            
             // create the script
@@ -36,6 +38,13 @@ namespace unit06_game
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new MoveEnemiesAction());
             script.AddAction("output", new DrawActorsAction(videoService));
+
+//------------------adding a new path, it can be improved------------------------------------
+            Path path = new Path();
+            path.MakePath();
+            cast.AddActor("path",path);
+            script.AddAction("output",new DrawPathAction(videoService,path));
+//--------------------------------------------------------------------------------------------
 
             // start the game
             Director director = new Director(videoService);
