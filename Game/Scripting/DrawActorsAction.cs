@@ -24,12 +24,7 @@ namespace unit06_game.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            //Snake snake1 = (Snake) cast.GetFirstActor("snake");
-            //List<Actor> segments1 = snake1.GetSegments();
-            //Snake snake2 = (Snake) cast.GetSecondActor("snake");
-            //List<Actor> segments2 = snake2.GetSegments();
-            //Actor score1 = cast.GetFirstActor("score1");
-            //Actor score2 = cast.GetFirstActor("score2");
+            List<Actor> towers = cast.GetActors("tower");
             List<Enemy> enemies = cast.GetEnemies("enemy");
             //Point Score1Position = new Point(0,0);
             //score1.SetPosition(Score1Position);
@@ -43,10 +38,10 @@ namespace unit06_game.Game.Scripting
             {
                 videoService.DrawRectangle(new Point (20*(enemy.GetHealth()/enemy.GetMaxHealth()+1), 10), enemy.GetHealthBarPosition(), enemy.GetColor(), true);
             }
-            //videoService.DrawActors(segments1);
-            //videoService.DrawActors(segments2);
-            //videoService.DrawActor(score1);
-            //videoService.DrawActor(score2);
+            foreach (Actor tower in towers) {
+                videoService.DrawRectangle(new Point (40, 40), tower.GetPosition(), tower.GetColor(), true);
+            }
+            //videoService.DrawActors(towers);
             videoService.DrawActors(messages);
             
             videoService.FlushBuffer();
