@@ -20,7 +20,7 @@ namespace unit06_game
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("tower", new Tower(cast));
-            //cast.AddActor("snake", new Snake(1));
+            cast.AddActor("stats", new Stats(cast));
             //cast.AddActor("snake", new Snake(2));
             //cast.AddActor("score1", new Time(cast));
             //cast.AddActor("score2", new Time(cast));

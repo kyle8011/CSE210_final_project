@@ -136,6 +136,13 @@ namespace unit06_game.Game.Casting
                 actors[group].Remove(actor);
             }
         }
+        public void RemoveEnemy(string group, Enemy enemy)
+        {
+            if (enemies.ContainsKey(group))
+            {
+                enemies[group].Remove(enemy);
+            }
+        }
 
     }
 }

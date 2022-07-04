@@ -37,7 +37,11 @@ namespace unit06_game.Game.Scripting
             List<Enemy> enemies = cast.GetEnemies("enemy");
             foreach (Enemy enemy in enemies)
             {
-                enemy.MoveNext();
+                if (enemy.GetAliveStatus())
+                {
+                    enemy.MoveNext();
+                }
+                
             }
         }
     }

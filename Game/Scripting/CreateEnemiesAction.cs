@@ -15,9 +15,12 @@ namespace unit06_game.Game.Scripting
         {
             time += 1;
             Path path = (Path) cast.GetFirstActor("path");
+            Stats stats = (Stats) cast.GetFirstActor("stats");
             List<Enemy> enemies = cast.GetEnemies("enemy");
-            if (enemies.Count < 10 && time % 10 == 1){
-            cast.AddEnemy("enemy", new Enemy(cast, path));
+            if (stats.InPlay() == false) {
+                if (enemies.Count < (10 + stats.GetWave()) && time % 10 == 1){
+                cast.AddEnemy("enemy", new Enemy(cast, path));
+                }
             }
         }
     }

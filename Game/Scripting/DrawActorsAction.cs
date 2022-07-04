@@ -36,13 +36,15 @@ namespace unit06_game.Game.Scripting
             videoService.DrawEnemies(enemies);
             foreach (Enemy enemy in enemies)
             {
-                videoService.DrawRectangle(new Point (20*(enemy.GetHealth()/enemy.GetMaxHealth()+1), 10), enemy.GetHealthBarPosition(), enemy.GetColor(), true);
+                videoService.DrawRectangle(new Point (10*(enemy.GetHealth()/enemy.GetMaxHealth()+1), 10), enemy.GetHealthBarPosition(), enemy.GetColor(), true);
             }
             foreach (Actor tower in towers) {
                 videoService.DrawRectangle(new Point (40, 40), tower.GetPosition(), tower.GetColor(), true);
             }
             //videoService.DrawActors(towers);
             videoService.DrawActors(messages);
+            // Draw the end zone
+            videoService.DrawRectangle(new Point (100, 100), new Point (Constants.MAX_X - 100, Constants.MAX_Y / 2 - 50), new Color (0, 0, 200), true);
             
             videoService.FlushBuffer();
             videoService.ClearBuffer();
