@@ -12,16 +12,16 @@ namespace unit06_game.Game.Scripting
         public void Execute(Cast cast, Script script)
         {
             Display gold = (Display) cast.GetFirstActor("gold");
-            gold.SetPosition(new Point(400, 0));
-            gold.UpdateValue("gold");
+            gold.SetPosition(new Point(500, 0));
+            gold.UpdateValue();
 
             Display wave = (Display) cast.GetFirstActor("wave");
-            wave.SetPosition(new Point (300, 0));
-            wave.UpdateValue("wave");
+            wave.SetPosition(new Point (400, 0));
+            wave.UpdateValue();
 
             Display lives = (Display) cast.GetFirstActor("lives");
-            wave.SetPosition(new Point (500, 0));
-            wave.UpdateValue("lives");
+            lives.SetPosition(new Point (600, 0));
+            lives.UpdateValue();
         }
     }
 }

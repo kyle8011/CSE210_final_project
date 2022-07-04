@@ -14,8 +14,8 @@ namespace unit06_game.Game.Casting
     public class Display : Actor
     {
         private int value = 0;
-        private string name = "";
         private Cast cast;
+        private string name = "";
 
 
         /// <summary>
@@ -24,7 +24,8 @@ namespace unit06_game.Game.Casting
         public Display(Cast cast, string name)
         {
             this.cast = cast;
-            SetText($"{name}: {GetValue(name)}");
+            this.name = name;
+            SetText($"{name}: {GetValue()}");
             SetColor(new Color (200, 200, 0));
         }
 
@@ -32,12 +33,12 @@ namespace unit06_game.Game.Casting
         /// Sets the name of the actor
         /// </summary>
         /// <param name="name">The name of the actor.</param>
-        public void UpdateValue(string name)
+        public void UpdateValue()
         {
-            SetText($"{name}: {GetValue(name)}");
+            SetText($"{name}: {GetValue()}");
         }
        
-        public int GetValue(string name) 
+        public int GetValue() 
         {
             Stats stats = (Stats) cast.GetFirstActor("stats");
             if (name == "wave")
