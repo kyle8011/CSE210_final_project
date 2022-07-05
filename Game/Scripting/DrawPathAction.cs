@@ -19,7 +19,7 @@ namespace unit06_game.Game.Scripting
         /// <summary>
         /// Constructs a new instance of DrawPath using VideoService and a Path.
         /// </summary>
-        public DrawPathAction(VideoService videoService,Path path)
+        public DrawPathAction(VideoService videoService, Path path)
         {
             this.videoService = videoService;
             this.path = path;
@@ -29,7 +29,14 @@ namespace unit06_game.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {   //drawing the path; if we want to make animations, that can be done in here.
-            videoService.DrawPath(path);
+            //videoService.DrawPath(path);
+            List<Point> points = path.GetPath();
+            foreach (Point position in points){
+                Point size = new Point(100, 30);
+                Color color = new Color(200, 200, 200);
+                videoService.DrawRectangle(size, position, color, true);
+            }
+            
         }
     }
 }

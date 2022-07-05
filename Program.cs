@@ -19,12 +19,11 @@ namespace unit06_game
            
             // create the cast
             Cast cast = new Cast();
-            cast.AddEnemy("enemy", new Enemy(cast));
-
-            //cast.AddActor("snake", new Snake(1));
-            //cast.AddActor("snake", new Snake(2));
-            //cast.AddActor("score1", new Time(cast));
-            //cast.AddActor("score2", new Time(cast));
+            cast.AddActor("tower", new Tower(cast));
+            cast.AddActor("stats", new Stats(cast));
+            cast.AddActor("wave", new Display(cast, "wave"));
+            cast.AddActor("gold", new Display(cast, "gold"));
+            cast.AddActor("lives", new Display(cast, "lives"));
 
             // create the services
             KeyboardService keyboardService= new KeyboardService();
@@ -35,15 +34,17 @@ namespace unit06_game
             // create the script
             Script script = new Script();
             script.AddAction("input", new ControlActorsAction(keyboardService));
+            script.AddAction("update", new CreateEnemiesAction());
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new MoveEnemiesAction());
+            script.AddAction("update", new UpdateHudAction());
             script.AddAction("output", new DrawActorsAction(videoService));
 
 //------------------adding a new path, it can be improved------------------------------------
             Path path = new Path();
             path.MakePath();
-            cast.AddActor("path",path);
-            script.AddAction("output",new DrawPathAction(videoService,path));
+            cast.AddActor("path", path);
+            script.AddAction("output", new DrawPathAction(videoService, path));
 //--------------------------------------------------------------------------------------------
 //------------------adding a new test enemy, it can be improved------------------------------------
         //    TestEnemy enemy = new TestEnemy();

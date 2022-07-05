@@ -24,30 +24,31 @@ namespace unit06_game.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            //Snake snake1 = (Snake) cast.GetFirstActor("snake");
-            //List<Actor> segments1 = snake1.GetSegments();
-            //Snake snake2 = (Snake) cast.GetSecondActor("snake");
-            //List<Actor> segments2 = snake2.GetSegments();
-            //Actor score1 = cast.GetFirstActor("score1");
-            //Actor score2 = cast.GetFirstActor("score2");
+            List<Actor> towers = cast.GetActors("tower");
             List<Enemy> enemies = cast.GetEnemies("enemy");
             //Point Score1Position = new Point(0,0);
             //score1.SetPosition(Score1Position);
             //Point Score2Position = new Point(Constants.MAX_X-200,0);
             //score2.SetPosition(Score2Position);
-            List<Actor> messages = cast.GetActors("messages");
+            Actor gold = cast.GetFirstActor("gold");          
+            Actor wave = cast.GetFirstActor("wave");
+            Actor lives = cast.GetFirstActor("lives");
             
             videoService.ClearBuffer();
             videoService.DrawEnemies(enemies);
             foreach (Enemy enemy in enemies)
             {
-                videoService.DrawRectangle(new Point (20*(enemy.GetHealth()/enemy.GetMaxHealth()+1), 10), enemy.GetHealthBarPosition(), enemy.GetColor(), true);
+                videoService.DrawRectangle(new Point (10*(enemy.GetHealth()/enemy.GetMaxHealth()+1), 10), enemy.GetHealthBarPosition(), enemy.GetColor(), true);
             }
-            //videoService.DrawActors(segments1);
-            //videoService.DrawActors(segments2);
-            //videoService.DrawActor(score1);
-            //videoService.DrawActor(score2);
-            videoService.DrawActors(messages);
+            foreach (Actor tower in towers) {
+                videoService.DrawRectangle(new Point (40, 40), tower.GetPosition(), tower.GetColor(), true);
+            }
+            //videoService.DrawActors(towers);
+            videoService.DrawActor(gold);
+            videoService.DrawActor(wave);
+            videoService.DrawActor(lives);
+            // Draw the end zone
+            videoService.DrawRectangle(new Point (100, 100), new Point (Constants.MAX_X - 100, Constants.MAX_Y / 2 - 50), new Color (0, 0, 200), true);
             
             videoService.FlushBuffer();
             videoService.ClearBuffer();

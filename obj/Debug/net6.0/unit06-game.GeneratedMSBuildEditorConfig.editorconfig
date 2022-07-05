@@ -7,4 +7,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = unit06_game
+<<<<<<< HEAD
 build_property.ProjectDir = c:\Users\Jayson\Documents\BYUI\CSE210_final_project\
+=======
+build_property.ProjectDir = c:\Users\kyle8\OneDrive\Desktop\CSE 210 Group\unit06-game\
+>>>>>>> 7939c33c02ef9f35b3ba8b65a318d8d780f3edc6
