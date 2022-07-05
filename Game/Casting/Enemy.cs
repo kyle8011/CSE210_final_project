@@ -87,12 +87,11 @@ namespace unit06_game.Game.Casting
             {
                 is_alive = false;
                 stats.AddGold();
-
+                cast.RemoveEnemy("enemy", this);
             }
             else 
             {
                 stats.LoseLife();
-                Console.WriteLine(stats.GetLives());
                 stats.AddGold();
                 cast.RemoveEnemy("enemy", this);
             }
