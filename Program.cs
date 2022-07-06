@@ -42,13 +42,6 @@ namespace unit06_game
             //test mouse service
             script.AddAction("input", new ControlTowerAction(mouseService));
 
-//------------------adding a new path, it can be improved------------------------------------
-            Path path = new Path();
-            path.MakePath();
-            cast.AddActor("path", path);
-            script.AddAction("output", new DrawPathAction(videoService, path));
-//--------------------------------------------------------------------------------------------
-
             // start the game
             Director director = new Director(videoService);
             director.StartGame(cast, script);
