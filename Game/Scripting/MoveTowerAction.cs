@@ -25,10 +25,10 @@ namespace unit06_game.Game.Scripting
         //    c) call the MoveNext() method on each actor.
         public void Execute(Cast cast, Script script)
         {
-            List<Tower> towers = cast.GetTower("tower");
+            List<Tower> towers = cast.GetTowers("tower");
             foreach (Tower tower in towers)
             {   
-                if(mouseService.IsButtonDown("left") && mouseService.GetCoordinates().GetX() <= tower.GetPosition().GetX() + 50 && mouseService.GetCoordinates().GetY() <= tower.GetPosition().GetY()))
+                //if(mouseService.IsButtonDown("left") && mouseService.GetCoordinates().GetX() <= tower.GetPosition().GetX() + 50 && mouseService.GetCoordinates().GetY() <= tower.GetPosition().GetY()))
                 {
                     //moving the towers to the position of the mouse
                     //enemy.MoveNext();

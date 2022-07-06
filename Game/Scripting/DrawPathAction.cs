@@ -35,8 +35,7 @@ namespace unit06_game.Game.Scripting
                 Point size = new Point(100, 30);
                 Color color = new Color(200, 200, 200);
                 videoService.DrawRectangle(size, position, color, true);
-            }
-            
+            } 
         }
     }
 }
