@@ -21,21 +21,19 @@ namespace unit06_game.Game.Scripting
         public void Execute(Cast cast, Script script)
         {
             Tower tower = (Tower)cast.GetFirstActor(Constants.TOWER_GROUP);
+            Point position = mouseService.GetCoordinates();
+            //centering the mouse on the tower
+            Point towerPosition = tower.GetPosition();
+            int xTower = towerPosition.GetX();
+            int yTower = towerPosition.GetY();
+            int x = position.GetX() -20;
+            int y = position.GetY()-20;
+            
+            bool hitbox =(Math.Abs(xTower-x)<40 && Math.Abs(yTower-y)<40);
+            position = new Point(x,y);
+           
 
-           //if (keyboardService.IsKeyDown(Constants.LEFT))
-           //{
-           //    racket.SwingLeft();
-           //}
-           //else if (keyboardService.IsKeyDown(Constants.RIGHT))
-           //{
-           //    racket.SwingRight();
-           //}
-           //else
-           //{
-           //    racket.StopMoving();
-           //}
-           Point position = mouseService.GetCoordinates();
-           if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED))
+           if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED) && hitbox)
            {
                 tower.SetPosition(position);
            }
