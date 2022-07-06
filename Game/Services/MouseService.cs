@@ -31,6 +31,11 @@ namespace unit06_game.Game.Services
         }
 
         /// </inheritdoc>
+        /// <summary>
+        /// Checks if the given click is the left button of the mouse
+        /// </summary>
+        /// <param name="key">The given mouse button</param>
+        /// <returns>True if the given button is right, false if otherwise.</returns>
         public bool IsButtonPressed(string button)
         {
             Raylib_cs.MouseButton raylibButton = buttons[button.ToLower()];
