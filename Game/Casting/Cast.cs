@@ -94,7 +94,7 @@ namespace unit06_game.Game.Casting
         /// Gets all the towers in the cast.
         /// </summary>
         /// <returns>A list of all actors.</returns>
-        public List<Tower> GetTower(string group)
+        public List<Tower> GetTowers(string group)
         {
             List<Tower> results = new List<Tower>();
             if (towers.ContainsKey(group))
