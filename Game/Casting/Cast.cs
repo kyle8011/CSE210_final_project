@@ -14,6 +14,7 @@ namespace unit06_game.Game.Casting
     {
         private Dictionary<string, List<Actor>> actors = new Dictionary<string, List<Actor>>();
         private Dictionary<string, List<Enemy>> enemies = new Dictionary<string, List<Enemy>>();
+        private Dictionary<string, List<Tower>> towers = new Dictionary<string, List<Tower>>();
 
         /// <summary>
         /// Constructs a new instance of Cast.
@@ -50,6 +51,21 @@ namespace unit06_game.Game.Casting
                 enemies[group].Add(enemy);
             }
         }
+        /// <summary>
+        /// Adds a tower to the cast.
+        /// </summary>
+        /// <param name="group">The group name.</param>
+        public void AddTower(string group, Tower tower)
+        {
+            if (!towers.ContainsKey(group))
+            {
+                towers[group] = new List<Tower>();
+            }
+            if (!towers[group].Contains(tower))
+            {
+                towers[group].Add(tower);
+            }
+        }
 
         /// <summary>
         /// Gets the actors in the given group. Returns an empty list if there aren't any.
@@ -74,6 +90,19 @@ namespace unit06_game.Game.Casting
             }
             return results;
         }
+        // <summary>
+        /// Gets all the towers in the cast.
+        /// </summary>
+        /// <returns>A list of all actors.</returns>
+        public List<Tower> GetTower(string group)
+        {
+            List<Tower> results = new List<Tower>();
+            if (towers.ContainsKey(group))
+            {
+                results.AddRange(towers[group]);
+            }
+            return results;
+        }   
 
         /// <summary>
         /// Gets all the actors in the cast.
