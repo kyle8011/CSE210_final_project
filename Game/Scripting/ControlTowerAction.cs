@@ -35,7 +35,7 @@ namespace unit06_game.Game.Scripting
            //    racket.StopMoving();
            //}
            Point position = mouseService.GetCoordinates();
-           if (mouseService.IsButtonPressed(Constants.MOUSE_PRESSED))
+           if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED))
            {
                 tower.SetPosition(position);
            }
