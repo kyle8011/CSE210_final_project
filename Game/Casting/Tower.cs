@@ -8,6 +8,7 @@ namespace unit06_game.Game.Casting
         private int damage = 0;
         private int range = 0;
         private int level = 1;
+
         public Tower(Cast cast)
         {
             this.cast = cast;

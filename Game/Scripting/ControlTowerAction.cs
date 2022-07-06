@@ -34,9 +34,10 @@ namespace unit06_game.Game.Scripting
            //{
            //    racket.StopMoving();
            //}
-           if (mouseService.IsButtonPressed(Constants.MOUSE_PRESSED))
+           Point position = mouseService.GetCoordinates();
+           if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED))
            {
-            Console.WriteLine("left button is pressed");
+                tower.SetPosition(position);
            }
 
         }

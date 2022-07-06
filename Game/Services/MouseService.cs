@@ -15,7 +15,10 @@ namespace unit06_game.Game.Services
         };
         public MouseService(){}
 
-        /// </inheritdoc>
+        /// <summary>
+        /// Get the current coordinate of the mouse
+        /// </summary>
+        /// <returns>Point with the coords of the mouse</returns>
         public Point GetCoordinates()
         {
             int x = Raylib.GetMouseX();
@@ -23,14 +26,18 @@ namespace unit06_game.Game.Services
             return new Point(x, y);
         }
 
-        /// </inheritdoc>
+    
+        /// <summary>
+        /// Checks if the left button of the mouse is hold.
+        /// </summary>
+        /// <param name="key">The given mouse button</param>
+        /// <returns>True if the left button is pressed, false if otherwise.</returns>
         public bool IsButtonDown(string button)
         {
             Raylib_cs.MouseButton raylibButton = buttons[button.ToLower()];
             return Raylib.IsMouseButtonDown(raylibButton);
         }
 
-        /// </inheritdoc>
         /// <summary>
         /// Checks if the given click is the left button of the mouse
         /// </summary>
