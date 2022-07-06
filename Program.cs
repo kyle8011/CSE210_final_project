@@ -24,6 +24,9 @@ namespace unit06_game
             cast.AddActor("wave", new Display(cast, "wave"));
             cast.AddActor("gold", new Display(cast, "gold"));
             cast.AddActor("lives", new Display(cast, "lives"));
+            //create path
+            Path path = new Path();
+            path.MakePath();
 
             // create the services
             KeyboardService keyboardService= new KeyboardService();
@@ -40,6 +43,7 @@ namespace unit06_game
             script.AddAction("update", new UpdateHudAction());
             script.AddAction("update", new TowerDamage());
             script.AddAction("output", new DrawActorsAction(videoService));
+            script.AddAction("output", new DrawPathAction(videoService,path));
             //test mouse service
             script.AddAction("input", new ControlTowerAction(mouseService));
 
