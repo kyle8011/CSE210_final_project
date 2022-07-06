@@ -39,6 +39,8 @@ namespace unit06_game
             script.AddAction("update", new MoveEnemiesAction());
             script.AddAction("update", new UpdateHudAction());
             script.AddAction("output", new DrawActorsAction(videoService));
+            //test mouse service
+            script.AddAction("input", new ControlTowerAction(mouseService));
 
 //------------------adding a new path, it can be improved------------------------------------
             Path path = new Path();
