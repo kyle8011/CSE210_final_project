@@ -202,6 +202,12 @@ namespace unit06_game.Game.Services
             int a = color.GetAlpha();
             return new Raylib_cs.Color(r, g, b, a);
         }
+        public void DrawMenu()
+        {   Point size = new Point(100,300);
+            Point position = new Point(0,0);
+            Casting.Color color = new Casting.Color(0,0,0);
+            DrawRectangle(size,position,color,true);
+        }
 
     }
 }
