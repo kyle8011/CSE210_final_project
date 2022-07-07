@@ -135,6 +135,19 @@ namespace unit06_game.Game.Casting
             }
             return result;
         }
+
+        public Enemy GetFirstEnemy(string group)
+        {
+            Enemy result = null;
+            if (enemies.ContainsKey(group))
+            {
+                if (enemies[group].Count > 0)
+                {
+                    result = enemies[group][0];
+                }
+            }
+            return result;
+        }
         /// <summary>
         /// Gets the first actor in the given group.
         /// </summary>
