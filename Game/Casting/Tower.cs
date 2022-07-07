@@ -14,11 +14,13 @@ namespace unit06_game.Game.Casting
             this.cast = cast;
             SetPosition(new Point (Constants.MAX_X / 2, Constants.MAX_Y / 2 - 100));
             SetColor(new Color (0, 200, 0));
+            SetRange(level);
+            SetDamage(level);
         }
 
-        public void SetDamage()
+        public void SetDamage(int level)
         {
-            damage = 40 * level;
+            damage = 10 * level;
         }
 
         public int GetDamage()
@@ -26,7 +28,7 @@ namespace unit06_game.Game.Casting
             return damage;
         }
 
-        public void SetRange()
+        public void SetRange(int level)
         {
             range = 200 * level;
         }
