@@ -24,6 +24,7 @@ namespace unit06_game
             cast.AddActor("wave", new Display(cast, "wave"));
             cast.AddActor("gold", new Display(cast, "gold"));
             cast.AddActor("lives", new Display(cast, "lives"));
+            //cast.AddActor("menu",new Display)
             //create path
             Path path = new Path();
             path.MakePath();
