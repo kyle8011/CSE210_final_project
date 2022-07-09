@@ -56,7 +56,7 @@ namespace unit06_game.Game.Casting
         /// </summary>
         public void SetMaxHealth()
         {
-            max_health = stats.GetWave() * 20; 
+            max_health = stats.GetWave() * 40; 
             health = max_health;
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace unit06_game.Game.Casting
 
         public int GetHealthBarLength()
         {
-            HealthBarLength = health / stats.GetWave();
+            HealthBarLength = (health / 2) / stats.GetWave();
             return HealthBarLength;
         }
         /// <summary>
