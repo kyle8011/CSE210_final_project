@@ -12,12 +12,28 @@ namespace unit06_game.Game.Casting
         private int damage = 1;
         private int range = 0;
         private int level = 1;
+        private string type = "none";
+        private int crit_chance = 0;
+        private int poison_damage = 0;
 
-        public Tower(Cast cast)
+        public Tower(Cast cast, string type)
         {
             this.cast = cast;
-            SetPosition(new Point (Constants.MAX_X / 2 - 200, Constants.MAX_Y / 2 - 100));
-            SetColor(new Color (0, 200, 0));
+            this.type = type;
+            if (type == "fire") {
+                SetPosition(new Point (Constants.MAX_X / 2 - 300, Constants.MAX_Y / 2 - 100));
+                SetColor(new Color (200, 0, 0));
+            }
+            else if (type == "crit") {
+                SetPosition(new Point (Constants.MAX_X / 2, Constants.MAX_Y / 2 - 100));
+                SetColor(new Color (0, 0, 200));
+            }
+            else if (type == "poison") {
+                SetPosition(new Point (Constants.MAX_X / 2 - 200, Constants.MAX_Y / 2 - 100));
+                SetColor(new Color (0, 200, 0));
+            }
+            //SetPosition(new Point (Constants.MAX_X / 2 - 200, Constants.MAX_Y / 2 - 100));
+            //SetColor(new Color (0, 200, 0));
             SetRange(level);
             SetDamage(level);
         }
@@ -47,7 +63,27 @@ namespace unit06_game.Game.Casting
 
         public void SetDamage(int level)
         {
-            damage = 1 * level;
+            if (type == "fire") {
+                damage = 50 * level;
+            }
+            else if (type == "crit") {
+                damage = 125 * level;
+                crit_chance = 30 + (5 * level);
+            }
+            else if (type == "poison") {
+                damage = 10 * level;
+                poison_damage = 1 * level;
+            }
+        }
+
+        public int GetCritChance() 
+        {
+            return crit_chance;
+        }
+
+        public int GetPoisonDamage()
+        {
+            return poison_damage;
         }
 
         public int GetDamage()
@@ -57,7 +93,7 @@ namespace unit06_game.Game.Casting
 
         public void SetRange(int level)
         {
-            range = 200 * level;
+            range = 150 + (25 * level);
         }
 
         public int GetRange()

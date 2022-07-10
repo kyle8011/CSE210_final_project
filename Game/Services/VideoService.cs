@@ -203,10 +203,21 @@ namespace unit06_game.Game.Services
             return new Raylib_cs.Color(r, g, b, a);
         }
         public void DrawMenu()
-        {   Point size = new Point(100,280);
+        {   Point size = new Point(200,80);
             Point position = new Point(0,0);
             Casting.Color color = new Casting.Color(250,250,250);
             DrawRectangle(size,position,color,true);
+
+            Point tower_size = new Point(40, 40);
+            Point poison_tower_position = new Point(20, 20);
+            Point crit_tower_position = new Point(80, 20);
+            Point fire_tower_position = new Point(140, 20);
+            Casting.Color poison_tower_color = new Casting.Color(0, 200, 0);
+            Casting.Color crit_tower_color = new Casting.Color(0, 0, 200);
+            Casting.Color fire_tower_color = new Casting.Color(200, 0, 0);
+            DrawRectangle(tower_size, poison_tower_position, poison_tower_color, true);
+            DrawRectangle(tower_size, crit_tower_position, crit_tower_color, true);
+            DrawRectangle(tower_size, fire_tower_position, fire_tower_color, true);
         }
 
     }

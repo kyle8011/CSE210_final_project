@@ -20,23 +20,25 @@ namespace unit06_game.Game.Scripting
 
         public void Execute(Cast cast, Script script)
         {
-            Tower tower = (Tower)cast.GetFirstActor(Constants.TOWER_GROUP);
+            List<Actor> towers = cast.GetActors("fire_tower");
             Point position = mouseService.GetCoordinates();
             //centering the mouse on the tower
-            Point towerPosition = tower.GetPosition();
-            int xTower = towerPosition.GetX();
-            int yTower = towerPosition.GetY();
-            int x = position.GetX() -20;
-            int y = position.GetY()-20;
-            
-            bool hitbox =(Math.Abs(xTower-x)<40 && Math.Abs(yTower-y)<40);
-            position = new Point(x,y);
+            foreach (Tower tower in towers) {
+                Point towerPosition = tower.GetPosition();
+                int xTower = towerPosition.GetX();
+                int yTower = towerPosition.GetY();
+                int x = position.GetX() -20;
+                int y = position.GetY()-20;
+                
+                bool hitbox =(Math.Abs(xTower-x)<40 && Math.Abs(yTower-y)<40);
+                position = new Point(x,y);
            
-
+            
            if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED) && hitbox)
            {
                 tower.SetPosition(position);
            }
+            }
 
         }
     }

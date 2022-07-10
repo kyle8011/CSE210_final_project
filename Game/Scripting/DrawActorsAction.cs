@@ -24,7 +24,9 @@ namespace unit06_game.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            List<Actor> towers = cast.GetActors("tower");
+            List<Actor> fire_towers = cast.GetActors("fire_tower");
+            List<Actor> crit_towers = cast.GetActors("crit_tower");
+            List<Actor> poison_towers = cast.GetActors("poison_tower");
             List<Enemy> enemies = cast.GetEnemies("enemy");
             Actor gold = cast.GetFirstActor("gold");
             Actor wave = cast.GetFirstActor("wave");
@@ -36,7 +38,13 @@ namespace unit06_game.Game.Scripting
             {
                 videoService.DrawRectangle(new Point (enemy.GetHealthBarLength(), 10), enemy.GetHealthBarPosition(), enemy.GetColor(), true);
             }
-            foreach (Actor tower in towers) {
+            foreach (Actor tower in fire_towers) {
+                videoService.DrawRectangle(new Point (40, 40), tower.GetPosition(), tower.GetColor(), true);
+            }
+            foreach (Actor tower in crit_towers) {
+                videoService.DrawRectangle(new Point (40, 40), tower.GetPosition(), tower.GetColor(), true);
+            }
+            foreach (Actor tower in poison_towers) {
                 videoService.DrawRectangle(new Point (40, 40), tower.GetPosition(), tower.GetColor(), true);
             }
             //videoService.DrawActors(towers);

@@ -17,6 +17,7 @@ namespace unit06_game.Game.Casting
         private Path path;
         private Stats stats;
         private bool is_alive = true;
+        private int poison_value = 0;
         /// <summary>
         /// Creates an instance of an enemy
         /// </summary>
@@ -51,12 +52,20 @@ namespace unit06_game.Game.Casting
             health -= damage;
             //Console.WriteLine(health);
         }
+        public void AddPoison(int poison_damage)
+        {
+            poison_value += poison_damage;
+        }
+        public int GetPoisonValue() 
+        {
+            return poison_value;
+        }
         /// <summary>
         /// Sets the max health of the enemy and sets current health to max.
         /// </summary>
         public void SetMaxHealth()
         {
-            max_health = stats.GetWave() * 40; 
+            max_health = stats.GetWave() * 4000; 
             health = max_health;
         }
         /// <summary>
@@ -84,7 +93,7 @@ namespace unit06_game.Game.Casting
 
         public int GetHealthBarLength()
         {
-            HealthBarLength = (health / 2) / stats.GetWave();
+            HealthBarLength = (health / 200) / stats.GetWave();
             return HealthBarLength;
         }
         /// <summary>
