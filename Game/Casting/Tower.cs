@@ -21,15 +21,15 @@ namespace unit06_game.Game.Casting
             this.cast = cast;
             this.type = type;
             if (type == "fire") {
-                SetPosition(new Point (Constants.MAX_X / 2 - 300, Constants.MAX_Y / 2 - 100));
+                SetPosition(new Point (140,20));
                 SetColor(new Color (200, 0, 0));
             }
             else if (type == "crit") {
-                SetPosition(new Point (Constants.MAX_X / 2, Constants.MAX_Y / 2 - 100));
+                SetPosition(new Point (80,20));
                 SetColor(new Color (0, 0, 200));
             }
             else if (type == "poison") {
-                SetPosition(new Point (Constants.MAX_X / 2 - 200, Constants.MAX_Y / 2 - 100));
+                SetPosition(new Point (20,20));
                 SetColor(new Color (0, 200, 0));
             }
             //SetPosition(new Point (Constants.MAX_X / 2 - 200, Constants.MAX_Y / 2 - 100));

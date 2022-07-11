@@ -19,9 +19,9 @@ namespace unit06_game
            
             // create the cast
             Cast cast = new Cast();
-            cast.AddActor("fire_tower", new Tower(cast, "fire"));
-            //cast.AddActor("crit_tower", new Tower(cast, "crit"));
-            //cast.AddActor("poison_tower", new Tower(cast, "poison"));
+            //cast.AddActor("fire_tower", new Tower(cast, "fire"));         //adding tower
+            //cast.AddActor("crit_tower", new Tower(cast, "crit"));         //adding tower
+            //cast.AddActor("poison_tower", new Tower(cast, "poison"));     //adding tower
             cast.AddActor("stats", new Stats(cast));
             cast.AddActor("wave", new Display(cast, "wave"));
             cast.AddActor("gold", new Display(cast, "gold"));
@@ -47,7 +47,6 @@ namespace unit06_game
             script.AddAction("update", new TowerDamage());
             script.AddAction("output", new DrawActorsAction(videoService));
             script.AddAction("output", new DrawPathAction(videoService,path));
-            //test mouse service
             script.AddAction("input", new ControlTowerAction(mouseService));
 
             // start the game
