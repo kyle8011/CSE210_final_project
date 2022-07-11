@@ -19,10 +19,24 @@ namespace unit06_game
            
             // create the cast
             Cast cast = new Cast();
+<<<<<<< HEAD
             //cast.AddActor("fire_tower", new Tower(cast, "fire"));         //adding tower
             //cast.AddActor("crit_tower", new Tower(cast, "crit"));         //adding tower
             //cast.AddActor("poison_tower", new Tower(cast, "poison"));     //adding tower
+=======
+<<<<<<< HEAD
+            //cast.AddActor("fire_tower", new Tower(cast, "fire"));
+            //cast.AddActor("crit_tower", new Tower(cast, "crit"));
+=======
+            cast.AddActor("fire_tower", new Tower(cast, "fire"));
+            cast.AddActor("crit_tower", new Tower(cast, "crit"));
+>>>>>>> c9bb57a6654f3cc48975cf3051e0354fbb54adb3
+            cast.AddActor("poison_tower", new Tower(cast, "poison"));
+>>>>>>> 40f73c149585c573417617abaaeed08dda6d5a80
             cast.AddActor("stats", new Stats(cast));
+            cast.AddActor("shop", new Display(cast, "poison"));
+            cast.AddActor("shop", new Display(cast, "critical"));
+            cast.AddActor("shop", new Display(cast, "fire"));
             cast.AddActor("wave", new Display(cast, "wave"));
             cast.AddActor("gold", new Display(cast, "gold"));
             cast.AddActor("lives", new Display(cast, "lives"));

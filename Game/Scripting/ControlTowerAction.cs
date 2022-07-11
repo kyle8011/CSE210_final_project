@@ -19,6 +19,7 @@ namespace unit06_game.Game.Scripting
         }
 // If the mouse is over the tower in menu then create a new tower and move it to a location
         public void Execute(Cast cast, Script script)
+<<<<<<< HEAD
         {   Point position = mouseService.GetCoordinates();
             //it will pick a tower depending of the position
             int x = position.GetX();
@@ -46,6 +47,13 @@ namespace unit06_game.Game.Scripting
             //----centering the mouse on the poison tower----
             foreach (Tower tower in poison_towers)
             {
+=======
+        {
+            List<Actor> towers = cast.GetActors("poison_tower");
+            Point position = mouseService.GetCoordinates();
+            //centering the mouse on the tower
+            foreach (Tower tower in towers) {
+>>>>>>> 40f73c149585c573417617abaaeed08dda6d5a80
                 Point towerPosition = tower.GetPosition();
                 int xTower = towerPosition.GetX();
                 int yTower = towerPosition.GetY();
