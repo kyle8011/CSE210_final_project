@@ -20,7 +20,7 @@ namespace unit06_game.Game.Scripting
 
         public void Execute(Cast cast, Script script)
         {
-            List<Actor> towers = cast.GetActors("fire_tower");
+            List<Actor> towers = cast.GetActors("poison_tower");
             Point position = mouseService.GetCoordinates();
             //centering the mouse on the tower
             foreach (Tower tower in towers) {
