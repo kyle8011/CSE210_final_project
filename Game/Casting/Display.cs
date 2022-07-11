@@ -25,7 +25,11 @@ namespace unit06_game.Game.Casting
         {
             this.cast = cast;
             this.name = name;
-            SetText($"{name}: {GetValue()}");
+            if (name == "wave" || name == "gold" || name == "lives") {
+                SetText($"{name}: {GetValue()}");
+            }
+            else {SetText($"{name} \n \n \n {GetValue()}");}
+            
             SetColor(new Color (200, 200, 0));
         }
 
@@ -41,10 +45,12 @@ namespace unit06_game.Game.Casting
         public int GetValue() 
         {
             Stats stats = (Stats) cast.GetFirstActor("stats");
+            List<Actor> fire_towers = cast.GetActors("fire_tower");
+            List<Actor> crit_towers = cast.GetActors("crit_tower");
+            List<Actor> poison_towers = cast.GetActors("poison_tower");
             if (name == "wave")
             {
                 value = stats.GetWave();
-                SetText("wave");
             }
             else if (name == "gold")
             {
@@ -53,6 +59,18 @@ namespace unit06_game.Game.Casting
             else if (name == "lives")
             {
                 value = stats.GetLives();
+            }
+            else if (name == "poison") 
+            {
+                value = 100 + (poison_towers.Count * 100);
+            }
+            else if (name == "fire") 
+            {
+                value = 100 + (fire_towers.Count * 100);
+            }
+            else if (name == "critical") 
+            {
+                value = 100 + (crit_towers.Count * 100);
             }
             else {value = 0;}
             return value;
