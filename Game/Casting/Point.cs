@@ -1,3 +1,4 @@
+using System;
 namespace unit06_game.Game.Casting
 {
     /// <summary>
@@ -11,6 +12,7 @@ namespace unit06_game.Game.Casting
     {
         private int x = 0;
         private int y = 0;
+        private double distance = 0;
 
         /// <summary>
         /// Constructs a new instance of Point using the given x and y values.
@@ -43,6 +45,12 @@ namespace unit06_game.Game.Casting
         public bool Equals(Point other)
         {
             return this.x == other.GetX() && this.y == other.GetY();
+        }
+
+        public double Distance_From(Point other)
+        {
+            distance = Math.Sqrt(Math.Pow(this.x - other.GetX(), 2) + Math.Pow(this.y - other.GetY(), 2));
+            return distance;
         }
 
         /// <summary>

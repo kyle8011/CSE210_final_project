@@ -11,11 +11,13 @@ namespace unit06_game.Game.Casting
     {
         private int health = 10;
         private int max_health = 10;
+        private int HealthBarLength = 100;
         private Point position = new Point(0, 0);
         private Cast cast;
         private Path path;
         private Stats stats;
         private bool is_alive = true;
+        private int poison_value = 0;
         /// <summary>
         /// Creates an instance of an enemy
         /// </summary>
@@ -36,19 +38,34 @@ namespace unit06_game.Game.Casting
             SetColor(new Color (200, 0, 0));
             SetMaxHealth();
         }
+
+        //public int GetProgress()
+        //{
+        //    return 
+        //}
         /// <summary>
         /// Reduces the current health of the enemy, takes damage as an input.
         /// </summary>
         public void TakeDamage(int damage)
         {
-            health = health - damage;
+            //Console.WriteLine(health);
+            health -= damage;
+            //Console.WriteLine(health);
+        }
+        public void AddPoison(int poison_damage)
+        {
+            poison_value += poison_damage;
+        }
+        public int GetPoisonValue() 
+        {
+            return poison_value;
         }
         /// <summary>
         /// Sets the max health of the enemy and sets current health to max.
         /// </summary>
         public void SetMaxHealth()
         {
-            max_health = stats.GetWave() * 100; 
+            max_health = stats.GetWave() * 4000; 
             health = max_health;
         }
         /// <summary>
@@ -72,6 +89,12 @@ namespace unit06_game.Game.Casting
         {
             Point HealthBarPosition = GetPosition().Add(new Point (-5, -15));
             return HealthBarPosition;
+        }
+
+        public int GetHealthBarLength()
+        {
+            HealthBarLength = (health / 200) / stats.GetWave();
+            return HealthBarLength;
         }
         /// <summary>
         /// Gets the status of the enemy, whether it is alive or not
