@@ -62,15 +62,15 @@ namespace unit06_game.Game.Casting
             }
             else if (name == "poison") 
             {
-                value = poison_towers.Count * 100;
+                value = 100 + (poison_towers.Count * 100);
             }
             else if (name == "fire") 
             {
-                value = fire_towers.Count * 100;
+                value = 100 + (fire_towers.Count * 100);
             }
             else if (name == "critical") 
             {
-                value = crit_towers.Count * 100;
+                value = 100 + (crit_towers.Count * 100);
             }
             else {value = 0;}
             return value;
