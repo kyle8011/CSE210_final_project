@@ -68,7 +68,7 @@ namespace unit06_game.Game.Casting
             }
             else if (type == "crit") {
                 damage = 125 * level;
-                crit_chance = 30 + (5 * level);
+                crit_chance = 25 + (5 * level);
             }
             else if (type == "poison") {
                 damage = 10 * level;

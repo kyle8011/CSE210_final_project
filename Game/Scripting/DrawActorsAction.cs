@@ -31,6 +31,7 @@ namespace unit06_game.Game.Scripting
             Actor gold = cast.GetFirstActor("gold");
             Actor wave = cast.GetFirstActor("wave");
             Actor lives = cast.GetFirstActor("lives");
+            List<Actor> shops = cast.GetActors("shop");
             
             videoService.ClearBuffer();
             videoService.DrawEnemies(enemies);
@@ -47,6 +48,12 @@ namespace unit06_game.Game.Scripting
             foreach (Actor tower in poison_towers) {
                 videoService.DrawRectangle(new Point (40, 40), tower.GetPosition(), tower.GetColor(), true);
             }
+            //Draw Menu
+                videoService.DrawMenu();
+            foreach (Actor shop in shops) {
+                videoService.DrawActor(shop);
+            }
+
             //videoService.DrawActors(towers);
             videoService.DrawActor(gold);
             videoService.DrawActor(wave);
@@ -54,8 +61,8 @@ namespace unit06_game.Game.Scripting
             // Draw the end zone
             videoService.DrawRectangle(new Point (100, 100), new Point (Constants.MAX_X - 100, Constants.MAX_Y / 2 - 50), new Color (0, 0, 200), true);
             
-            //Draw Menu
-            videoService.DrawMenu();
+            
+            
             
             videoService.FlushBuffer();
             videoService.ClearBuffer();

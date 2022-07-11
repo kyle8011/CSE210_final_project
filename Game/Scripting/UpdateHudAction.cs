@@ -1,9 +1,11 @@
 using unit06_game.Game.Casting;
+using System.Collections.Generic;
 
 namespace unit06_game.Game.Scripting
 {
     public class UpdateHudAction : Action
     {
+        private int i = 0;
         public UpdateHudAction()
         {
 
@@ -22,6 +24,11 @@ namespace unit06_game.Game.Scripting
             Display lives = (Display) cast.GetFirstActor("lives");
             lives.SetPosition(new Point (600, 0));
             lives.UpdateValue();
+
+            List<Actor> shop = cast.GetActors("shop");
+            for (i = 0; i < shop.Count; i++) {
+                shop[i].SetPosition(new Point (20 + (i * 60), 0));
+            }
         }
     }
 }

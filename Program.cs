@@ -20,9 +20,12 @@ namespace unit06_game
             // create the cast
             Cast cast = new Cast();
             cast.AddActor("fire_tower", new Tower(cast, "fire"));
-            //cast.AddActor("crit_tower", new Tower(cast, "crit"));
-            //cast.AddActor("poison_tower", new Tower(cast, "poison"));
+            cast.AddActor("crit_tower", new Tower(cast, "crit"));
+            cast.AddActor("poison_tower", new Tower(cast, "poison"));
             cast.AddActor("stats", new Stats(cast));
+            cast.AddActor("shop", new Display(cast, "poison"));
+            cast.AddActor("shop", new Display(cast, "critical"));
+            cast.AddActor("shop", new Display(cast, "fire"));
             cast.AddActor("wave", new Display(cast, "wave"));
             cast.AddActor("gold", new Display(cast, "gold"));
             cast.AddActor("lives", new Display(cast, "lives"));
