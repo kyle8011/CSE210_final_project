@@ -116,19 +116,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\simps\\.nuget\\packages\\": {}
+    "C:\\Users\\kyle8\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simps\\Documents\\School\\Spring 2022\\cse210\\final_game\\CSE210_final_project\\unit06-game.csproj",
+      "projectUniqueName": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj",
       "projectName": "unit06-game",
-      "projectPath": "C:\\Users\\simps\\Documents\\School\\Spring 2022\\cse210\\final_game\\CSE210_final_project\\unit06-game.csproj",
-      "packagesPath": "C:\\Users\\simps\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simps\\Documents\\School\\Spring 2022\\cse210\\final_game\\CSE210_final_project\\obj\\",
+      "projectPath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj",
+      "packagesPath": "C:\\Users\\kyle8\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\simps\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\kyle8\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -172,7 +172,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -15,21 +15,22 @@ namespace unit06_game.Game.Casting
         private string type = "none";
         private int crit_chance = 0;
         private int poison_damage = 0;
+        private bool placed = false;
 
         public Tower(Cast cast, string type)
         {
             this.cast = cast;
             this.type = type;
             if (type == "fire") {
-                SetPosition(new Point (140,20));
+                SetPosition(new Point (140, 80));
                 SetColor(new Color (200, 0, 0));
             }
             else if (type == "crit") {
-                SetPosition(new Point (80,20));
+                SetPosition(new Point (80, 80));
                 SetColor(new Color (0, 0, 200));
             }
             else if (type == "poison") {
-                SetPosition(new Point (20,20));
+                SetPosition(new Point (20, 80));
                 SetColor(new Color (0, 200, 0));
             }
             //SetPosition(new Point (Constants.MAX_X / 2 - 200, Constants.MAX_Y / 2 - 100));
@@ -61,19 +62,41 @@ namespace unit06_game.Game.Casting
             
         }
 
+        public void PlaceTower()
+        {
+            placed = true;
+        }
+        
+        public bool GetPlacedStatus()
+        {
+            return placed;
+        }
+
+        public int GetPrice()
+        {
+            List<Actor> fire_towers = cast.GetActors("fire_tower");
+            List<Actor> crit_towers = cast.GetActors("crit_tower");
+            List<Actor> poison_towers = cast.GetActors("poison_tower");
+            if (type == "fire") {
+                return (100 + (fire_towers.Count * 100));
+            }            
+            if (type == "crit") {
+                return (100 + (crit_towers.Count * 100));
+            }            
+            if (type == "poison") {
+                return (100 + (poison_towers.Count * 100));
+            }            
+            else {return 10000;}
+        }
+
         public void SetDamage(int level)
         {
             if (type == "fire") {
                 damage = 50 * level;
             }
             else if (type == "crit") {
-<<<<<<< HEAD
                 damage = 100 * level;
                 crit_chance = 30 + (5 * level);
-=======
-                damage = 125 * level;
-                crit_chance = 25 + (5 * level);
->>>>>>> c9bb57a6654f3cc48975cf3051e0354fbb54adb3
             }
             else if (type == "poison") {
                 damage = 10 * level;

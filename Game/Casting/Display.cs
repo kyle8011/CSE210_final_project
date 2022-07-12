@@ -25,10 +25,9 @@ namespace unit06_game.Game.Casting
         {
             this.cast = cast;
             this.name = name;
-            if (name == "wave" || name == "gold" || name == "lives") {
-                SetText($"{name}: {GetValue()}");
-            }
-            else {SetText($"{name} \n \n \n {GetValue()}");}
+            
+            
+            
             
             SetColor(new Color (200, 200, 0));
         }
@@ -39,7 +38,11 @@ namespace unit06_game.Game.Casting
         /// <param name="name">The name of the actor.</param>
         public void UpdateValue()
         {
-            SetText($"{name}: {GetValue()}");
+            if (name == "wave" || name == "gold" || name == "lives") {
+                SetText($"{name}: {GetValue()}");
+            }
+                        
+            else {SetText($"{name} \n \n \n {GetValue()}");}
         }
        
         public int GetValue() 
@@ -62,15 +65,24 @@ namespace unit06_game.Game.Casting
             }
             else if (name == "poison") 
             {
-                value = 100 + (poison_towers.Count * 100);
+                if (poison_towers != null) {
+                    value = 100 + (poison_towers.Count * 100);
+                }
+                else {value = 100;}
             }
             else if (name == "fire") 
             {
-                value = 100 + (fire_towers.Count * 100);
+                if (fire_towers != null) {
+                    value = 100 + (fire_towers.Count * 100);
+                }
+                else {value = 100;}
             }
             else if (name == "critical") 
             {
-                value = 100 + (crit_towers.Count * 100);
+                if (crit_towers != null) {
+                    value = 100 + (crit_towers.Count * 100);
+                }
+                else {value = 0;}
             }
             else {value = 0;}
             return value;

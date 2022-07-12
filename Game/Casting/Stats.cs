@@ -6,7 +6,7 @@ namespace unit06_game.Game.Casting
     {
         private int wave = 0;
         private int lives = 10;
-        private int gold = 200;
+        private int gold = 300;
         private bool inplay = false;
         private Cast cast;
 
@@ -53,6 +53,10 @@ namespace unit06_game.Game.Casting
         public void AddGold()
         {
             gold += 10 * wave;
+        }
+        public void SpendGold(int spent)
+        {
+            gold -= spent;
         }
         /// <summary>
         /// Returns the current gold value.

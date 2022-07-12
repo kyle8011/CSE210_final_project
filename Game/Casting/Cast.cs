@@ -15,6 +15,7 @@ namespace unit06_game.Game.Casting
         private Dictionary<string, List<Actor>> actors = new Dictionary<string, List<Actor>>();
         private Dictionary<string, List<Enemy>> enemies = new Dictionary<string, List<Enemy>>();
         private Dictionary<string, List<Tower>> towers = new Dictionary<string, List<Tower>>();
+        private Dictionary<string, List<Display>> displays = new Dictionary<string, List<Display>>();
 
         /// <summary>
         /// Constructs a new instance of Cast.
@@ -103,6 +104,15 @@ namespace unit06_game.Game.Casting
             }
             return results;
         }   
+        public List<Display> GetDisplays(string group)
+        {
+            List<Display> results = new List<Display>();
+            if (displays.ContainsKey(group))
+            {
+                results.AddRange(displays[group]);
+            }
+            return results;
+        }   
 
         /// <summary>
         /// Gets all the actors in the cast.
@@ -161,6 +171,19 @@ namespace unit06_game.Game.Casting
                 if (actors[group].Count > 0)
                 {
                     result = actors[group][1];
+                }
+            }
+            return result;
+        }
+
+        public Actor GetThirdActor(string group)
+        {
+            Actor result = null;
+            if (actors.ContainsKey(group))
+            {
+                if (actors[group].Count > 0)
+                {
+                    result = actors[group][2];
                 }
             }
             return result;
