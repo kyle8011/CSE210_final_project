@@ -39,7 +39,6 @@ namespace unit06_game.Game.Scripting
 
             Display tower_stats = (Display) cast.GetFirstActor("tower_stats");
             tower_stats.SetPosition(new Point (1000, 0));
-            //tower_stats.UpdateValue();
         }
     }
 }

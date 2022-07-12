@@ -51,7 +51,6 @@ namespace unit06_game.Game.Casting
             {
                 SetText($"{name} \n \n \n {GetValue()}");
             }
-            else {SetText($" level: {level} \n damage: {damage} \n range: {range}");}
         }
        
         public int GetValue() 
@@ -107,16 +106,15 @@ namespace unit06_game.Game.Casting
             tower_stats.level = tower.GetLevel();
             tower_stats.poison = tower.GetPoisonDamage();
             tower_stats.critical = tower.GetCritChance();
-            if (tower.GetType() == "Fire") {
+            if (tower.GetKind() == "fire") {
                 tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range}");
             }
-            else if (tower.GetType() == "poison") {
+            else if (tower.GetKind() == "poison") {
                 tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n poison: {tower_stats.poison}");
             }
-            else if (tower.GetType() == "crit") {
+            else if (tower.GetKind() == "crit") {
                 tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n Critical: {tower_stats.critical}");
             }
-            tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n Critical: {tower_stats.critical}");
             videoService.DrawActor(tower_stats);
         }
 

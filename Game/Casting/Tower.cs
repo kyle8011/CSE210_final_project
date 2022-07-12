@@ -39,7 +39,7 @@ namespace unit06_game.Game.Casting
             SetDamage(level);
         }
 
-        public string GetType() 
+        public string GetKind() 
         {
             return type;
         }
