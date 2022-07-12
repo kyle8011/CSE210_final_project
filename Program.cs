@@ -19,14 +19,16 @@ namespace unit06_game
            
             // create the cast
             Cast cast = new Cast();
+            VideoService videoService = new VideoService(false);
             //cast.AddActor("poison_tower", new Tower(cast, "poison"));
             cast.AddActor("stats", new Stats(cast));
-            cast.AddActor("shop", new Display(cast, "poison"));
-            cast.AddActor("shop", new Display(cast, "critical"));
-            cast.AddActor("shop", new Display(cast, "fire"));
-            cast.AddActor("wave", new Display(cast, "wave"));
-            cast.AddActor("gold", new Display(cast, "gold"));
-            cast.AddActor("lives", new Display(cast, "lives"));
+            cast.AddActor("shop", new Display(cast, "poison", videoService));
+            cast.AddActor("shop", new Display(cast, "critical", videoService));
+            cast.AddActor("shop", new Display(cast, "fire", videoService));
+            cast.AddActor("tower_stats", new Display(cast, "tower_stats", videoService));
+            cast.AddActor("wave", new Display(cast, "wave", videoService));
+            cast.AddActor("gold", new Display(cast, "gold", videoService));
+            cast.AddActor("lives", new Display(cast, "lives", videoService));
             //cast.AddActor("menu",new Display)
             //create path
             Path path = new Path();
@@ -34,7 +36,7 @@ namespace unit06_game
 
             // create the services
             KeyboardService keyboardService= new KeyboardService();
-            VideoService videoService = new VideoService(false);
+            
             MouseService mouseService = new MouseService();
             
            

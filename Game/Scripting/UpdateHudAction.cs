@@ -36,6 +36,10 @@ namespace unit06_game.Game.Scripting
             for (i = 0; i < shop.Count; i++) {
                 shop[i].SetPosition(new Point (20 + (i * 60), 0));
             }
+
+            Display tower_stats = (Display) cast.GetFirstActor("tower_stats");
+            tower_stats.SetPosition(new Point (1000, 0));
+            //tower_stats.UpdateValue();
         }
     }
 }

@@ -39,6 +39,11 @@ namespace unit06_game.Game.Casting
             SetDamage(level);
         }
 
+        public string GetType() 
+        {
+            return type;
+        }
+
         public List<Enemy> GetEnemiesInRange()
         {
             List<Enemy> enemies = cast.GetEnemies("enemy");
@@ -127,6 +132,11 @@ namespace unit06_game.Game.Casting
         public int GetRange()
         {
             return range;
+        }
+
+        public int GetLevel()
+        {
+            return level;
         }
 
     }

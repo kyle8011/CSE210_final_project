@@ -69,7 +69,7 @@ namespace unit06_game.Game.Scripting
                         tower.PlaceTower();
                     }
                     else {
-                        //display tower stats
+                        poison.ShowStats(tower);
                     }
                 }
             }
@@ -93,7 +93,7 @@ namespace unit06_game.Game.Scripting
                         tower.PlaceTower();
                     }
                     else {
-                        //display tower stats
+                        fire.ShowStats(tower);
                     }
                 }
             }
@@ -117,7 +117,7 @@ namespace unit06_game.Game.Scripting
                         tower.PlaceTower();
                     }
                     else {
-                        //display tower stats
+                        critical.ShowStats(tower);
                     }
                 }
             }

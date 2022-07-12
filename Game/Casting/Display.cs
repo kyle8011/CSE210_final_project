@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using unit06_game.Game.Casting;
+using unit06_game.Game.Scripting;
+using unit06_game.Game.Services;
 
 
 namespace unit06_game.Game.Casting
@@ -16,19 +18,22 @@ namespace unit06_game.Game.Casting
         private int value = 0;
         private Cast cast;
         private string name = "";
+        private VideoService videoService;
+        private int damage = 1;
+        private int range = 1;
+        private int level = 1;
+        private int poison = 1;
+        private int critical = 1;
 
 
         /// <summary>
         /// Constructs a new instance of Score, starting at 0.
         /// </summary>
-        public Display(Cast cast, string name)
+        public Display(Cast cast, string name, VideoService videoService)
         {
+            this.videoService = videoService;
             this.cast = cast;
             this.name = name;
-            
-            
-            
-            
             SetColor(new Color (200, 200, 0));
         }
 
@@ -42,7 +47,11 @@ namespace unit06_game.Game.Casting
                 SetText($"{name}: {GetValue()}");
             }
                         
-            else {SetText($"{name} \n \n \n {GetValue()}");}
+            else if (name == "fire" || name == "critical" || name == "poison") 
+            {
+                SetText($"{name} \n \n \n {GetValue()}");
+            }
+            else {SetText($" level: {level} \n damage: {damage} \n range: {range}");}
         }
        
         public int GetValue() 
@@ -86,6 +95,29 @@ namespace unit06_game.Game.Casting
             }
             else {value = 0;}
             return value;
+        }
+
+        public void ShowStats(Tower tower)
+        {
+            Display tower_stats = (Display)cast.GetFirstActor("tower_stats");
+            Point position = tower.GetPosition();
+            videoService.DrawRectangle(new Point (100, 100), new Point (1000, 0), new Color (50, 50, 50), true);
+            tower_stats.damage = tower.GetDamage();
+            tower_stats.range = tower.GetRange();
+            tower_stats.level = tower.GetLevel();
+            tower_stats.poison = tower.GetPoisonDamage();
+            tower_stats.critical = tower.GetCritChance();
+            if (tower.GetType() == "Fire") {
+                tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range}");
+            }
+            else if (tower.GetType() == "poison") {
+                tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n poison: {tower_stats.poison}");
+            }
+            else if (tower.GetType() == "crit") {
+                tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n Critical: {tower_stats.critical}");
+            }
+            tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n Critical: {tower_stats.critical}");
+            videoService.DrawActor(tower_stats);
         }
 
     }
