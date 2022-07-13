@@ -1,11 +1,20 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "O6YKx0im8oy93N+C3a6Ile4xr/yA4HE1Gnm8eXvm/+lasJcIiOET5pswbxPKE/gIPVyZLeEZk2zBv0mo9Q+2BQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jayson\\Documents\\BYUI\\CSE210_final_project\\unit06-game.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jayson\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
     "C:\\Users\\Jayson\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+=======
+  "dgSpecHash": "ptL4nGT22DoVACa4kiyibSmz78BOBnJgSN7nJ9wQ9KB5ZAgnN2f1I/DiaHKjHVz9QB25IwGBKeIytHifS+4gog==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kyle8\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
+    "C:\\Users\\kyle8\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+>>>>>>> 2c188a4959666bc23188de3317470d874a6c1ac4
   ],
   "logs": []
 }

@@ -19,27 +19,15 @@ namespace unit06_game
            
             // create the cast
             Cast cast = new Cast();
-<<<<<<< HEAD
-            //cast.AddActor("fire_tower", new Tower(cast, "fire"));         //adding tower
-            //cast.AddActor("crit_tower", new Tower(cast, "crit"));         //adding tower
-            //cast.AddActor("poison_tower", new Tower(cast, "poison"));     //adding tower
-=======
-<<<<<<< HEAD
-            //cast.AddActor("fire_tower", new Tower(cast, "fire"));
-            //cast.AddActor("crit_tower", new Tower(cast, "crit"));
-=======
-            cast.AddActor("fire_tower", new Tower(cast, "fire"));
-            cast.AddActor("crit_tower", new Tower(cast, "crit"));
->>>>>>> c9bb57a6654f3cc48975cf3051e0354fbb54adb3
-            cast.AddActor("poison_tower", new Tower(cast, "poison"));
->>>>>>> 40f73c149585c573417617abaaeed08dda6d5a80
+            VideoService videoService = new VideoService(false);
             cast.AddActor("stats", new Stats(cast));
-            cast.AddActor("shop", new Display(cast, "poison"));
-            cast.AddActor("shop", new Display(cast, "critical"));
-            cast.AddActor("shop", new Display(cast, "fire"));
-            cast.AddActor("wave", new Display(cast, "wave"));
-            cast.AddActor("gold", new Display(cast, "gold"));
-            cast.AddActor("lives", new Display(cast, "lives"));
+            cast.AddActor("shop", new Display(cast, "poison", videoService));
+            cast.AddActor("shop", new Display(cast, "critical", videoService));
+            cast.AddActor("shop", new Display(cast, "fire", videoService));
+            cast.AddActor("tower_stats", new Display(cast, "tower_stats", videoService));
+            cast.AddActor("wave", new Display(cast, "wave", videoService));
+            cast.AddActor("gold", new Display(cast, "gold", videoService));
+            cast.AddActor("lives", new Display(cast, "lives", videoService));
             //cast.AddActor("menu",new Display)
             //create path
             Path path = new Path();
@@ -47,13 +35,12 @@ namespace unit06_game
 
             // create the services
             KeyboardService keyboardService= new KeyboardService();
-            VideoService videoService = new VideoService(false);
+            
             MouseService mouseService = new MouseService();
             
            
             // create the script
             Script script = new Script();
-            script.AddAction("input", new ControlActorsAction(keyboardService));
             script.AddAction("update", new CreateEnemiesAction());
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new MoveEnemiesAction());
@@ -61,7 +48,7 @@ namespace unit06_game
             script.AddAction("update", new TowerDamage());
             script.AddAction("output", new DrawActorsAction(videoService));
             script.AddAction("output", new DrawPathAction(videoService,path));
-            script.AddAction("input", new ControlTowerAction(mouseService));
+            script.AddAction("input", new ControlTowerAction(mouseService, keyboardService));
 
             // start the game
             Director director = new Director(videoService);

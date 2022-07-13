@@ -26,9 +26,19 @@ namespace unit06_game.Game.Scripting
             lives.UpdateValue();
 
             List<Actor> shop = cast.GetActors("shop");
+            Display poison = (Display) cast.GetFirstActor("shop");
+            poison.UpdateValue();
+            Display critical = (Display) cast.GetSecondActor("shop");
+            critical.UpdateValue();
+            Display fire = (Display) cast.GetThirdActor("shop");
+            fire.UpdateValue();
+
             for (i = 0; i < shop.Count; i++) {
                 shop[i].SetPosition(new Point (20 + (i * 60), 0));
             }
+
+            Display tower_stats = (Display) cast.GetFirstActor("tower_stats");
+            tower_stats.SetPosition(new Point (1000, 0));
         }
     }
 }

@@ -12,10 +12,12 @@ namespace unit06_game.Game.Scripting
     /// </summary>
     public class ControlTowerAction : Action
     {    private MouseService mouseService;
+        private KeyboardService keyboardService;
 
-        public ControlTowerAction(MouseService mouseService)
+        public ControlTowerAction(MouseService mouseService, KeyboardService keyboardService)
         {
             this.mouseService = mouseService;
+            this.keyboardService = keyboardService;
         }
 // If the mouse is over the tower in menu then create a new tower and move it to a location
         public void Execute(Cast cast, Script script)
@@ -23,20 +25,27 @@ namespace unit06_game.Game.Scripting
             //it will pick a tower depending of the position
             int x = position.GetX();
             int y = position.GetY();
+            Stats stats = (Stats) cast.GetFirstActor("stats");
+            List<Display> shops = cast.GetDisplays("shop");
+            Display poison = (Display) cast.GetFirstActor("shop");
+            Display critical = (Display) cast.GetSecondActor("shop");
+            Display fire = (Display) cast.GetThirdActor("shop");
         
             //creating tower from menu
-            if(Math.Abs(x-20)<40 & Math.Abs(y-20)<40)
+            if(Math.Abs(x-40) < 40 && Math.Abs(y-20) < 40 && mouseService.IsButtonPressed(Constants.MOUSE_PRESSED) && stats.GetGold() >= poison.GetValue())
             {
+                stats.SpendGold(poison.GetValue());
                 cast.AddActor("poison_tower", new Tower(cast, "poison"));
             }
-            else if(Math.Abs(x-140)<40& Math.Abs(y-20)<40)
+            if(Math.Abs(x-100) < 40 && Math.Abs(y-20) < 40 && mouseService.IsButtonPressed(Constants.MOUSE_PRESSED) && stats.GetGold() >= critical.GetValue())
             {
-                cast.AddActor("fire_tower", new Tower(cast, "fire"));
-                
-            }
-            else if(Math.Abs(x-80)<40& Math.Abs(y-80)<40)
-            {
+                stats.SpendGold(critical.GetValue());
                 cast.AddActor("crit_tower", new Tower(cast, "crit"));
+            }
+            if(Math.Abs(x-160) < 40 && Math.Abs(y-20) < 40 && mouseService.IsButtonPressed(Constants.MOUSE_PRESSED) && stats.GetGold() >= fire.GetValue())
+            {
+                stats.SpendGold(fire.GetValue());
+                cast.AddActor("fire_tower", new Tower(cast, "fire"));
             }
 
             //Picking the towers
@@ -46,23 +55,26 @@ namespace unit06_game.Game.Scripting
             //----centering the mouse on the poison tower----
             foreach (Tower tower in poison_towers)
             {
-=======
-        {
-            List<Actor> towers = cast.GetActors("poison_tower");
-            Point position = mouseService.GetCoordinates();
-            //centering the mouse on the tower
-            foreach (Tower tower in towers) {
->>>>>>> 40f73c149585c573417617abaaeed08dda6d5a80
                 Point towerPosition = tower.GetPosition();
                 int xTower = towerPosition.GetX();
                 int yTower = towerPosition.GetY();
-                x=x-20;
-                y=y-20;
-                bool hitbox =(Math.Abs(xTower-x)<40 && Math.Abs(yTower-y)<40);
-                position = new Point(x,y);
-                if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED) && hitbox)
-                {
-                     tower.SetPosition(position);
+                bool hitbox =(Math.Abs(xTower-x) < 40 && Math.Abs(yTower-y) < 40);
+                position = new Point(x-20, y-20);
+                if (hitbox) {
+                    if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED) && !tower.GetPlacedStatus())
+                    {
+                        tower.SetPosition(position);
+                    }
+                    else if (mouseService.IsButtonReleased(Constants.MOUSE_PRESSED)) {
+                        tower.PlaceTower();
+                    }
+                    else {
+                        poison.ShowStats(tower);
+                        if (keyboardService.IsKeyDown("u") && stats.GetGold() >= tower.GetLevelPrice()) {
+                            stats.SpendGold(tower.GetLevelPrice());
+                            tower.LevelUp();
+                        }
+                    }
                 }
             }
 
@@ -72,13 +84,23 @@ namespace unit06_game.Game.Scripting
                 Point towerPosition = tower.GetPosition();
                 int xTower = towerPosition.GetX();
                 int yTower = towerPosition.GetY();
-                x=x-20;
-                y=y-20;
-                bool hitbox =(Math.Abs(xTower-x)<40 && Math.Abs(yTower-y)<40);
-                position = new Point(x,y);
-                if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED) && hitbox)
-                {
-                     tower.SetPosition(position);
+                bool hitbox =(Math.Abs(xTower-x) < 40 && Math.Abs(yTower-y) < 40);
+                position = new Point(x-20, y-20);
+                if (hitbox) {
+                    if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED) && !tower.GetPlacedStatus())
+                    {
+                        tower.SetPosition(position);
+                    }
+                    else if (mouseService.IsButtonReleased(Constants.MOUSE_PRESSED)) {
+                        tower.PlaceTower();
+                    }
+                    else {
+                        fire.ShowStats(tower);
+                        if (keyboardService.IsKeyDown("u") && stats.GetGold() >= tower.GetLevelPrice()) {
+                            stats.SpendGold(tower.GetLevelPrice());
+                            tower.LevelUp();
+                        }
+                    }
                 }
             }
 
@@ -88,16 +110,25 @@ namespace unit06_game.Game.Scripting
                 Point towerPosition = tower.GetPosition();
                 int xTower = towerPosition.GetX();
                 int yTower = towerPosition.GetY();
-                x=x-20;
-                y=y-20;
-                bool hitbox =(Math.Abs(xTower-x)<40 && Math.Abs(yTower-y)<40);
-                position = new Point(x,y);
-                if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED) && hitbox)
-                {
-                     tower.SetPosition(position);
+                bool hitbox =(Math.Abs(xTower-x) < 40 && Math.Abs(yTower-y) < 40);
+                position = new Point(x-20, y-20);
+                if (hitbox) {
+                    if (mouseService.IsButtonDown(Constants.MOUSE_PRESSED) && !tower.GetPlacedStatus())
+                    {
+                        tower.SetPosition(position);
+                    }
+                    else if (mouseService.IsButtonReleased(Constants.MOUSE_PRESSED)) {
+                        tower.PlaceTower();
+                    }
+                    else {
+                        critical.ShowStats(tower);
+                        if (keyboardService.IsKeyDown("u") && stats.GetGold() >= tower.GetLevelPrice()) {
+                            stats.SpendGold(tower.GetLevelPrice());
+                            tower.LevelUp();
+                        }
+                    }
                 }
             }
-
         }
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using unit06_game.Game.Casting;
 using unit06_game.Game.Services;
+using System.Timers;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace unit06_game.Game.Scripting
@@ -21,6 +23,7 @@ namespace unit06_game.Game.Scripting
             List<Enemy> enemies = cast.GetEnemies("enemy");
             if (stats.InPlay() == false) 
             {
+                //await Task.Delay(5000);
                 for (i = 0; i < 9 + stats.GetWave(); i++)
                 {
                     cast.AddEnemy("enemy", new Enemy(cast, path));
