@@ -19,7 +19,13 @@ namespace unit06_game
            
             // create the cast
             Cast cast = new Cast();
+<<<<<<< HEAD
+            //cast.AddActor("fire_tower", new Tower(cast, "fire"));
+            //cast.AddActor("crit_tower", new Tower(cast, "crit"));
+            cast.AddActor("poison_tower", new Tower(cast, "poison"));
+=======
             VideoService videoService = new VideoService(false);
+>>>>>>> 5553cd71bd7393935c28d38796b9dc7b3cfcced0
             cast.AddActor("stats", new Stats(cast));
             cast.AddActor("shop", new Display(cast, "poison", videoService));
             cast.AddActor("shop", new Display(cast, "critical", videoService));
