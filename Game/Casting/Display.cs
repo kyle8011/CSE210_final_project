@@ -74,7 +74,7 @@ namespace unit06_game.Game.Casting
             else if (name == "poison") 
             {
                 if (poison_towers != null) {
-                    value = 100 + (poison_towers.Count * 100);
+                    value = 200 + (poison_towers.Count * 100);
                 }
                 else {value = 100;}
             }

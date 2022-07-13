@@ -1,22 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "C:\\Users\\Jayson\\Documents\\BYUI\\CSE210_final_project\\unit06-game.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Jayson\\Documents\\BYUI\\CSE210_final_project\\unit06-game.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Jayson\\Documents\\BYUI\\CSE210_final_project\\unit06-game.csproj",
-        "projectName": "unit06-game",
-        "projectPath": "C:\\Users\\Jayson\\Documents\\BYUI\\CSE210_final_project\\unit06-game.csproj",
-        "packagesPath": "C:\\Users\\Jayson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jayson\\Documents\\BYUI\\CSE210_final_project\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Jayson\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
     "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj": {}
   },
   "projects": {
@@ -31,7 +15,6 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kyle8\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> 2c188a4959666bc23188de3317470d874a6c1ac4
         ],
         "originalTargetFrameworks": [
           "net6.0"

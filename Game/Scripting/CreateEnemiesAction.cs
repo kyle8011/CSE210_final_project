@@ -24,10 +24,10 @@ namespace unit06_game.Game.Scripting
             if (stats.InPlay() == false) 
             {
                 //await Task.Delay(5000);
-                for (i = 0; i < 9 + stats.GetWave(); i++)
+                for (i = 0; i < 10; i++)
                 {
                     cast.AddEnemy("enemy", new Enemy(cast, path));
-                    await Task.Delay(1500);
+                    await Task.Delay(1500 - (stats.GetWave() * 10));
                 }
             }
         }
