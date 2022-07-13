@@ -4,13 +4,15 @@ namespace unit06_game.Game.Casting
     
     public class Stats : Actor
     {
-        private int wave = 0;
+        private int wave = 1;
         private int lives = 10;
         private int gold = 300;
-        private bool inplay = false;
+        private bool inplay = true;
+        private bool start = false;
+        private int start_int = 0;
         private Cast cast;
 
-        public Stats(Cast cast, int wave = 0, int lives = 10, int gold = 200)
+        public Stats(Cast cast, int wave = 1, int lives = 10, int gold = 200)
         {
             this.wave = wave;
             this.lives = lives;
@@ -52,7 +54,7 @@ namespace unit06_game.Game.Casting
         /// </summary>
         public void AddGold()
         {
-            gold += 10 * wave;
+            gold += 5 + (5 * wave);
         }
         public void SpendGold(int spent)
         {
@@ -68,19 +70,38 @@ namespace unit06_game.Game.Casting
         /// <summary>
         /// Tells if the wave has finished, returns false if
         /// all the enemies have died or crossed into the end zone.
-        /// </summary>
+        // / </summary>
         public bool InPlay()
         {
-            //int num_alive = 0;
+            List<Actor> fire_towers = cast.GetActors("fire_tower");
+            List<Actor> crit_towers = cast.GetActors("crit_tower");
+            List<Actor> poison_towers = cast.GetActors("poison_tower");
             List<Enemy> enemies = cast.GetEnemies("enemy");
+            foreach (Tower tower in fire_towers) {
+                if (tower.GetPlacedStatus()) {
+                    start = true;
+                }
+            }
+            foreach (Tower tower in crit_towers) {
+                if (tower.GetPlacedStatus()) {
+                    start = true;
+                }
+            }
+            foreach (Tower tower in poison_towers) {
+                if (tower.GetPlacedStatus()) {
+                    start = true;
+                }
+            }
             if (enemies.Count > 0)
             {
                 inplay = true;
             }
-            else 
-            {
+            else if (start)
+            { 
                 inplay = false;
-                AddWave();
+                if (start_int > 0)
+                {AddWave();}
+                start_int ++;
             }
             return inplay;
         }

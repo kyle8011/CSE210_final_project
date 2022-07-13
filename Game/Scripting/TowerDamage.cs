@@ -46,7 +46,7 @@ namespace unit06_game.Game.Scripting
                             // Critical strike just deals damage a second time
                             crit = random.Next(100);
                             if (tower.GetCritChance() > crit) {
-                                enemy.TakeDamage(tower.GetDamage());
+                                enemy.TakeDamage(tower.GetDamage() * 2);
                             }
                             // For some reason this works with the enemies before they reach the closest threshold
                             // But they continue to take damage even after they are no longer the closest.

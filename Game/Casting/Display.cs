@@ -100,20 +100,20 @@ namespace unit06_game.Game.Casting
         {
             Display tower_stats = (Display)cast.GetFirstActor("tower_stats");
             Point position = tower.GetPosition();
-            videoService.DrawRectangle(new Point (100, 100), new Point (1000, 0), new Color (50, 50, 50), true);
+            videoService.DrawRectangle(new Point (100, 120), new Point (1000, 0), new Color (50, 50, 50), true);
             tower_stats.damage = tower.GetDamage();
             tower_stats.range = tower.GetRange();
             tower_stats.level = tower.GetLevel();
             tower_stats.poison = tower.GetPoisonDamage();
             tower_stats.critical = tower.GetCritChance();
             if (tower.GetKind() == "fire") {
-                tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range}");
+                tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n upgrage: {tower.GetLevelPrice()}");
             }
             else if (tower.GetKind() == "poison") {
-                tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n poison: {tower_stats.poison}");
+                tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n poison: {tower_stats.poison} \n upgrade: {tower.GetLevelPrice()}");
             }
             else if (tower.GetKind() == "crit") {
-                tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n Critical: {tower_stats.critical}");
+                tower_stats.SetText($" level: {tower_stats.level} \n damage: {tower_stats.damage} \n range: {tower_stats.range} \n Critical: {tower_stats.critical} \n upgrade: {tower.GetLevelPrice()}");
             }
             videoService.DrawActor(tower_stats);
         }

@@ -12,10 +12,12 @@ namespace unit06_game.Game.Scripting
     /// </summary>
     public class ControlTowerAction : Action
     {    private MouseService mouseService;
+        private KeyboardService keyboardService;
 
-        public ControlTowerAction(MouseService mouseService)
+        public ControlTowerAction(MouseService mouseService, KeyboardService keyboardService)
         {
             this.mouseService = mouseService;
+            this.keyboardService = keyboardService;
         }
 // If the mouse is over the tower in menu then create a new tower and move it to a location
         public void Execute(Cast cast, Script script)
@@ -56,8 +58,6 @@ namespace unit06_game.Game.Scripting
                 Point towerPosition = tower.GetPosition();
                 int xTower = towerPosition.GetX();
                 int yTower = towerPosition.GetY();
-                //x=x-20;
-                //y=y-20;
                 bool hitbox =(Math.Abs(xTower-x) < 40 && Math.Abs(yTower-y) < 40);
                 position = new Point(x-20, y-20);
                 if (hitbox) {
@@ -70,6 +70,10 @@ namespace unit06_game.Game.Scripting
                     }
                     else {
                         poison.ShowStats(tower);
+                        if (keyboardService.IsKeyDown("u") && stats.GetGold() >= tower.GetLevelPrice()) {
+                            stats.SpendGold(tower.GetLevelPrice());
+                            tower.LevelUp();
+                        }
                     }
                 }
             }
@@ -80,8 +84,6 @@ namespace unit06_game.Game.Scripting
                 Point towerPosition = tower.GetPosition();
                 int xTower = towerPosition.GetX();
                 int yTower = towerPosition.GetY();
-                //x=x-20;
-                //y=y-20;
                 bool hitbox =(Math.Abs(xTower-x) < 40 && Math.Abs(yTower-y) < 40);
                 position = new Point(x-20, y-20);
                 if (hitbox) {
@@ -94,6 +96,10 @@ namespace unit06_game.Game.Scripting
                     }
                     else {
                         fire.ShowStats(tower);
+                        if (keyboardService.IsKeyDown("u") && stats.GetGold() >= tower.GetLevelPrice()) {
+                            stats.SpendGold(tower.GetLevelPrice());
+                            tower.LevelUp();
+                        }
                     }
                 }
             }
@@ -104,8 +110,6 @@ namespace unit06_game.Game.Scripting
                 Point towerPosition = tower.GetPosition();
                 int xTower = towerPosition.GetX();
                 int yTower = towerPosition.GetY();
-                //x=x-20;
-                //y=y-20;
                 bool hitbox =(Math.Abs(xTower-x) < 40 && Math.Abs(yTower-y) < 40);
                 position = new Point(x-20, y-20);
                 if (hitbox) {
@@ -118,10 +122,13 @@ namespace unit06_game.Game.Scripting
                     }
                     else {
                         critical.ShowStats(tower);
+                        if (keyboardService.IsKeyDown("u") && stats.GetGold() >= tower.GetLevelPrice()) {
+                            stats.SpendGold(tower.GetLevelPrice());
+                            tower.LevelUp();
+                        }
                     }
                 }
             }
-
         }
     }
 }

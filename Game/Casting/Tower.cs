@@ -44,6 +44,13 @@ namespace unit06_game.Game.Casting
             return type;
         }
 
+        public void LevelUp()
+        {
+            level ++;
+            SetRange(level);
+            SetDamage(level);
+        }
+
         public List<Enemy> GetEnemiesInRange()
         {
             List<Enemy> enemies = cast.GetEnemies("enemy");
@@ -92,6 +99,11 @@ namespace unit06_game.Game.Casting
                 return (100 + (poison_towers.Count * 100));
             }            
             else {return 10000;}
+        }
+
+        public int GetLevelPrice()
+        {
+            return level * 100;
         }
 
         public void SetDamage(int level)

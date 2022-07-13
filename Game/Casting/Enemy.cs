@@ -30,8 +30,8 @@ namespace unit06_game.Game.Casting
             //List<Point> points = path.GetPath();
             //foreach (Point point in points) {
             //    Point velocity = new Point();
-                SetVelocity(new Point (5, 0));
-            //}
+            
+            SetVelocity(new Point (5, 0));
             SetText("M");
             SetPosition(position); 
             
@@ -112,7 +112,7 @@ namespace unit06_game.Game.Casting
                 stats.AddGold();
                 cast.RemoveEnemy("enemy", this);
             }
-            else 
+            else if (GetPosition().GetX() > 1000)
             {
                 stats.LoseLife();
                 stats.AddGold();

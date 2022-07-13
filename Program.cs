@@ -20,7 +20,6 @@ namespace unit06_game
             // create the cast
             Cast cast = new Cast();
             VideoService videoService = new VideoService(false);
-            //cast.AddActor("poison_tower", new Tower(cast, "poison"));
             cast.AddActor("stats", new Stats(cast));
             cast.AddActor("shop", new Display(cast, "poison", videoService));
             cast.AddActor("shop", new Display(cast, "critical", videoService));
@@ -42,7 +41,6 @@ namespace unit06_game
            
             // create the script
             Script script = new Script();
-            script.AddAction("input", new ControlActorsAction(keyboardService));
             script.AddAction("update", new CreateEnemiesAction());
             script.AddAction("update", new MoveActorsAction());
             script.AddAction("update", new MoveEnemiesAction());
@@ -50,7 +48,7 @@ namespace unit06_game
             script.AddAction("update", new TowerDamage());
             script.AddAction("output", new DrawActorsAction(videoService));
             script.AddAction("output", new DrawPathAction(videoService,path));
-            script.AddAction("input", new ControlTowerAction(mouseService));
+            script.AddAction("input", new ControlTowerAction(mouseService, keyboardService));
 
             // start the game
             Director director = new Director(videoService);
