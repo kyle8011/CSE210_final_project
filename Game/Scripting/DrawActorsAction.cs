@@ -31,6 +31,7 @@ namespace unit06_game.Game.Scripting
             Actor gold = cast.GetFirstActor("gold");
             Actor wave = cast.GetFirstActor("wave");
             Actor lives = cast.GetFirstActor("lives");
+            
             List<Actor> shops = cast.GetActors("shop");
             
             videoService.ClearBuffer();
@@ -58,11 +59,9 @@ namespace unit06_game.Game.Scripting
             videoService.DrawActor(gold);
             videoService.DrawActor(wave);
             videoService.DrawActor(lives);
+            
             // Draw the end zone
             videoService.DrawRectangle(new Point (100, 100), new Point (Constants.MAX_X - 100, Constants.MAX_Y / 2 - 50), new Color (0, 0, 200), true);
-            
-            
-            
             
             videoService.FlushBuffer();
             videoService.ClearBuffer();

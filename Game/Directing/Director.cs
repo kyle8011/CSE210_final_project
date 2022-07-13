@@ -34,7 +34,7 @@ namespace unit06_game.Game.Directing
         public void StartGame(Cast cast, Script script)
         {
             videoService.OpenWindow();
-            Raylib.ClearBackground(Raylib_cs.Color.BLUE);
+            //Raylib.ClearBackground(Raylib_cs.Color.BLUE);
             while (videoService.IsWindowOpen())
             {
                 ExecuteActions("input", cast, script);

@@ -25,7 +25,7 @@ namespace unit06_game.Game.Services
             keys["a"] = KeyboardKey.KEY_A;
             keys["s"] = KeyboardKey.KEY_S;
             keys["d"] = KeyboardKey.KEY_D;
-            keys["i"] = KeyboardKey.KEY_I;
+            keys["u"] = KeyboardKey.KEY_U;
             keys["j"] = KeyboardKey.KEY_J;
             keys["k"] = KeyboardKey.KEY_K;
             keys["l"] = KeyboardKey.KEY_L;

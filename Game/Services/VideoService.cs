@@ -209,9 +209,9 @@ namespace unit06_game.Game.Services
             DrawRectangle(size,position,color,true);
 
             Point tower_size = new Point(40, 40);
-            Point poison_tower_position = new Point(20, 20);
-            Point crit_tower_position = new Point(80, 20);
-            Point fire_tower_position = new Point(140, 20);
+            Point poison_tower_position = new Point(20, 20);        //towers position 
+            Point crit_tower_position = new Point(80, 20);          //towers position
+            Point fire_tower_position = new Point(140, 20);         //towers position
             Casting.Color poison_tower_color = new Casting.Color(0, 200, 0);
             Casting.Color crit_tower_color = new Casting.Color(0, 0, 200);
             Casting.Color fire_tower_color = new Casting.Color(200, 0, 0);
