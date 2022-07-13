@@ -24,8 +24,7 @@ namespace unit06_game.Game.Casting
         private int level = 1;
         private int poison = 1;
         private int critical = 1;
-
-
+        private Random random= new Random();
         /// <summary>
         /// Constructs a new instance of Score, starting at 0.
         /// </summary>
@@ -35,6 +34,10 @@ namespace unit06_game.Game.Casting
             this.cast = cast;
             this.name = name;
             SetColor(new Color (200, 200, 0));
+            if (name == "EndGame")
+            {
+                SetFontSize(100);
+            }
         }
 
         /// <summary>
@@ -50,6 +53,12 @@ namespace unit06_game.Game.Casting
             else if (name == "fire" || name == "critical" || name == "poison") 
             {
                 SetText($"{name} \n \n \n {GetValue()}");
+            }
+
+            else if (name == "EndGame")
+            {
+                SetText($"Game Over");
+                SetColor(new Color(random.Next(255), random.Next(65), random.Next(125)));
             }
         }
        

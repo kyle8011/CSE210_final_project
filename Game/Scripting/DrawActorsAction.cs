@@ -31,9 +31,9 @@ namespace unit06_game.Game.Scripting
             Actor gold = cast.GetFirstActor("gold");
             Actor wave = cast.GetFirstActor("wave");
             Actor lives = cast.GetFirstActor("lives");
-            
+            Actor EndGame = cast.GetFirstActor("EndGame");
             List<Actor> shops = cast.GetActors("shop");
-            
+            Stats stats = (Stats) cast.GetFirstActor("stats");
             videoService.ClearBuffer();
             videoService.DrawEnemies(enemies);
             foreach (Enemy enemy in enemies)
@@ -59,7 +59,11 @@ namespace unit06_game.Game.Scripting
             videoService.DrawActor(gold);
             videoService.DrawActor(wave);
             videoService.DrawActor(lives);
-            
+            if (stats.GetLives() <= 0)
+            {
+            videoService.DrawActor(EndGame);
+            }
+
             // Draw the end zone
             videoService.DrawRectangle(new Point (100, 100), new Point (Constants.MAX_X - 100, Constants.MAX_Y / 2 - 50), new Color (0, 0, 200), true);
             

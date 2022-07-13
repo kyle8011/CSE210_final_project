@@ -25,6 +25,10 @@ namespace unit06_game.Game.Scripting
             lives.SetPosition(new Point (600, 0));
             lives.UpdateValue();
 
+            Display EndGame = (Display) cast.GetFirstActor("EndGame");
+            EndGame.SetPosition(new Point (300, 250));
+            EndGame.UpdateValue();
+
             List<Actor> shop = cast.GetActors("shop");
             Display poison = (Display) cast.GetFirstActor("shop");
             poison.UpdateValue();
