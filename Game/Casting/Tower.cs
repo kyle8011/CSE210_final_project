@@ -96,14 +96,14 @@ namespace unit06_game.Game.Casting
                 return (100 + (crit_towers.Count * 100));
             }            
             if (type == "poison") {
-                return (100 + (poison_towers.Count * 100));
+                return (200 + (poison_towers.Count * 100));
             }            
             else {return 10000;}
         }
 
         public int GetLevelPrice()
         {
-            return level * 100;
+            return level * 150;
         }
 
         public void SetDamage(int level)

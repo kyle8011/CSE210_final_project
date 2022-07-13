@@ -116,11 +116,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\simps\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\kyle8\\.nuget\\packages\\": {}
+>>>>>>> 62440be3a78281f6e9f603d7d08724273ab98bdb
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\simps\\Documents\\School\\Spring 2022\\cse210\\final_game\\CSE210_final_project\\unit06-game.csproj",
       "projectName": "unit06-game",
       "projectPath": "C:\\Users\\simps\\Documents\\School\\Spring 2022\\cse210\\final_game\\CSE210_final_project\\unit06-game.csproj",
@@ -129,6 +134,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\simps\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+      "projectUniqueName": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj",
+      "projectName": "unit06-game",
+      "projectPath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj",
+      "packagesPath": "C:\\Users\\kyle8\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\kyle8\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 62440be3a78281f6e9f603d7d08724273ab98bdb
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -181,7 +196,11 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Problem reading the cache file C:\\Users\\simps\\Documents\\School\\Spring 2022\\cse210\\final_game\\CSE210_final_project\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problem reading the cache file C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> 62440be3a78281f6e9f603d7d08724273ab98bdb
     }
   ]
 }

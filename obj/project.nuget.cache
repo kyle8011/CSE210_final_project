@@ -1,18 +1,31 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "7GbBsCOLuoWBw3jIK5JhbnNqO11yCwY/twQ+NisHSQAhr+TvG19ny1Kdl8jEW5e0kC+k23eQOd2G82rMGcCIcg==",
   "success": true,
   "projectFilePath": "C:\\Users\\simps\\Documents\\School\\Spring 2022\\cse210\\final_game\\CSE210_final_project\\unit06-game.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\simps\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
     "C:\\Users\\simps\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+=======
+  "dgSpecHash": "ptL4nGT22DoVACa4kiyibSmz78BOBnJgSN7nJ9wQ9KB5ZAgnN2f1I/DiaHKjHVz9QB25IwGBKeIytHifS+4gog==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\unit06-game.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kyle8\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
+    "C:\\Users\\kyle8\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+>>>>>>> 62440be3a78281f6e9f603d7d08724273ab98bdb
   ],
   "logs": [
     {
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
       "message": "Problem reading the cache file C:\\Users\\simps\\Documents\\School\\Spring 2022\\cse210\\final_game\\CSE210_final_project\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
+      "message": "Problem reading the cache file C:\\Users\\kyle8\\OneDrive\\Desktop\\CSE 210 Group\\unit06-game\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> 62440be3a78281f6e9f603d7d08724273ab98bdb
     }
   ]
 }

@@ -54,7 +54,7 @@ namespace unit06_game.Game.Casting
         /// </summary>
         public void AddGold()
         {
-            gold += 5 + (5 * wave);
+            gold += 8 + (2 * wave);
         }
         public void SpendGold(int spent)
         {
