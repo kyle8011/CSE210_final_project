@@ -19,7 +19,6 @@ namespace unit06_game.Game.Scripting
         }
 // If the mouse is over the tower in menu then create a new tower and move it to a location
         public void Execute(Cast cast, Script script)
-<<<<<<< HEAD
         {   Point position = mouseService.GetCoordinates();
             //it will pick a tower depending of the position
             int x = position.GetX();
